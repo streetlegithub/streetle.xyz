@@ -52,7 +52,7 @@ body {
 	background-color: #555;
 }
 
-.navbar:hover .menu {
+.menu-btn:focus + .menu {
 	display: block;
 }
 
@@ -69,7 +69,7 @@ body {
 	.menu a {
 		border-bottom: none;
 	}
-	.navbar .menu-btn:focus + .menu {
+	.menu-btn:focus + .menu {
 		display: block;
 	}
 }
