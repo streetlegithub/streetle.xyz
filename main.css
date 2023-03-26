@@ -5,9 +5,7 @@ body {
 
 
 
-main {
-  margin-top: 50px; /* adjust the value as needed */
-}
+
 @font-face {
   font-family: header;
   src: url(header.otf);
