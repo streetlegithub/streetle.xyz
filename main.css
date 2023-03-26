@@ -24,6 +24,16 @@ header {
   font-size: 18px;
   color: white;
   cursor: pointer;
+  position: relative;
+  z-index: 2;
+}
+
+.menu-icon {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: white;
+  margin: 5px auto;
 }
 
 .dropdown-menu {
@@ -50,4 +60,7 @@ header {
   background-color: white;
   color: black;
   text-decoration: none;
+}
+.menu-btn:focus + .dropdown-menu {
+  display: block;
 }
