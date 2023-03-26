@@ -42,13 +42,14 @@ body {
   background-color: transparent;
   color: #fff;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   background-color: #444;
   color: #fff;
   padding: 10px 20px;
@@ -57,6 +58,7 @@ body {
 
 .menu.show {
   display: block;
+  animation: slide-down 0.5s;
 }
 
 .menu a {
@@ -73,4 +75,15 @@ body {
 .main {
   margin-top: 100px;
   /* This is to make sure the content doesn't go behind the header */
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
