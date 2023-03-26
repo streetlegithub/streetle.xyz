@@ -63,6 +63,11 @@ body {
 
 .logo {
   height: 40px;
+  width: 40px;
+}
+.logo img {
+  width: auto;
+  max-width: 100%;
 }
 
 .name {
