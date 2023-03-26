@@ -1,47 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <script>
-$(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 0) {
-      $('header').addClass('sticky');
-    } else {
-      $('header').removeClass('sticky');
-    }
-  });
-});
-
-  </script>
    <link rel="stylesheet" href="main.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
  <body>
-
-<header>
-  <div class="menu-container">
-    <div class="logo">
-      <img src="your-logo.png" alt="Your logo">
-    </div>
-    <nav class="menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropbtn">Dropdown</a>
-          <div class="dropdown-content">
-            <a href="#">Button 1</a>
-            <a href="#">Button 2</a>
-            <a href="#">Button 3</a>
-          </div>
-        </li>
-      </ul>
-    </nav>
+  <div class="navbar">
+  <div class="logo">Streetle</div>
+  <div class="menu-btn">&#9776;</div>
+  <div class="menu">
+  <a href="#">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
   </div>
-</header>
-
+  </div>
 
  </body>
 </html>
