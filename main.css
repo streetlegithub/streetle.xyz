@@ -162,3 +162,24 @@ main {
 .image-container:hover .overlay {
   height: 50%;
 }
+
+/* Small screens */
+@media (max-width: 576px) {
+  .overlay {
+    width: 100%;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 576px) and (max-width: 768px) {
+  .overlay {
+    width: 75%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 768px) {
+  .overlay {
+    width: 50%;
+  }
+}
