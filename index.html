@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <script>
+    const dropdownButton = document.querySelector('.dropdown-button');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+
+    dropdownButton.addEventListener('click', () => {
+      dropdownMenu.classList.toggle('open');
+    });
+  </script>
    <link rel="stylesheet" href="main.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
