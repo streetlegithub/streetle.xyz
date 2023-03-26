@@ -16,6 +16,26 @@ p {
 
 
 
+/* Small screens */
+@media (max-width: 576px) {
+  img {
+    width: 100%;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 576px) and (max-width: 768px) {
+  img {
+    width: 75%;
+  }
+}
+
+/* Large screens */
+@media (min-width: 768px) {
+  img {
+    width: 50%;
+  }
+}
 
 @font-face {
   font-family: header;
