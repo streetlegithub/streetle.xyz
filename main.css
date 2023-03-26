@@ -1,75 +1,78 @@
 body {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 60px;
-	background-color: #333;
-	color: #fff;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 20px;
-	box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .logo {
-	font-size: 24px;
-	font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .menu-btn {
-	font-size: 24px;
-	cursor: pointer;
-	display: block;
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
 }
 
 .menu {
-	display: none;
-	position: absolute;
-	top: 60px;
-	left: 0;
-	width: 100%;
-	background-color: #333;
-	padding: 10px 20px;
-	box-sizing: border-box;
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
 
 .menu a {
-	display: block;
-	color: #fff;
-	text-decoration: none;
-	padding: 10px 0;
-	border-bottom: 1px solid #fff;
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid #fff;
 }
 
 .menu a:hover {
-	background-color: #555;
+  background-color: #555;
 }
 
-.menu-btn:focus + .menu {
-	display: block;
+.menu-btn:focus + .menu,
+.menu-btn:hover + .menu {
+  display: block;
 }
 
 @media only screen and (max-width: 600px) {
-	.menu-btn {
-		display: block;
-	}
-	.menu {
-		position: relative;
-		top: 0;
-		left: 0;
-		padding: 10px 0;
-	}
-	.menu a {
-		border-bottom: none;
-	}
-	.menu-btn:focus + .menu {
-		display: block;
-	}
+  .menu-btn {
+    display: block;
+  }
+  .menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .menu a {
+    border-bottom: none;
+  }
+  .menu-btn:focus + .menu,
+  .menu-btn:hover + .menu {
+    display: block;
+  }
 }
