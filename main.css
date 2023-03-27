@@ -130,7 +130,7 @@ img {
 /* Style for screens larger than 600px (desktop devices) */
 @media (min-width: 600px) {
   img {
-    width: calc(100% / 3 - 2%); /* Show 3 images per row on desktop with a 1% margin */
+    width: 28%
     margin: 1%; /* Add a 1% margin between images */
   }
 }
