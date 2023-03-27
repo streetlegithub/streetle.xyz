@@ -98,6 +98,12 @@ img {
 
 .main {
   margin-top: 70px;
+  padding-top: 70px;
+}
+
+main {
+  margin-top: 70px;
+  padding-top: 70px;
 }
 
 @keyframes slide-down {
