@@ -1,10 +1,6 @@
 body {
   background-color: #191a1d;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding-top: 70px;
 }
-
 h1 {
   color: #FF8C00; /* orange yellow */
 }
@@ -17,16 +13,31 @@ p {
   color: #eee; /* light grey */
 }
 
+
+
+
 /* Default style for all screen sizes */
 img {
-  width: 90%; /* Show 3 images per row on desktop */
-  margin: 5%;
+  width: 30%; /* Show 3 images per row on desktop */
+  margin: 6%;
 }
 
+/* Style for screens smaller than 600px (mobile devices) */
+@media (max-width: 600px) {
+  img {
+    width: 85%; /* Show 1 image per row on mobile */
+    margin: 10%;
+  }
+}
 
 @font-face {
   font-family: header;
   src: url(header.otf);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
 .header {
@@ -80,7 +91,6 @@ img {
   z-index: 2;
 }
 
-
 .menu.show {
   display: block;
   animation: slide-down 0.5s;
@@ -99,12 +109,11 @@ img {
 
 .main {
   margin-top: 70px;
-  padding-top: 70px;
+  /* This is to make sure the content doesn't go behind the header */
 }
-
 main {
   margin-top: 70px;
-  padding-top: 70px;
+  /* This is to make sure the content doesn't go behind the header */
 }
 
 @keyframes slide-down {
@@ -118,40 +127,3 @@ main {
   }
 }
 
-
-/* IMAGE CONTAINER */
-.image-container {
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  margin: 5%;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.image-container:hover .overlay {
-  opacity: 1;
-}
-
-.title, .description {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-.image-container img {
-  transition: opacity 0.3s ease-in-out;
-}
-
-.image-container:hover img {
-  opacity: 0.8;
-}
