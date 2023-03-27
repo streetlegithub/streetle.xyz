@@ -52,6 +52,7 @@ body {
   justify-content: space-between;
   padding: 10px 20px;
   z-index: 1;
+  height: 10vh; 
 }
 
 .logo {
