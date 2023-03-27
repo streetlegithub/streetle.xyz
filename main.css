@@ -158,20 +158,34 @@ main {
   margin: 0;
 }
 
-@media (max-width: 600px) {
+/* Style for all screen sizes */
+.image-container {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Make the image fill the container and maintain aspect ratio */
+  margin: 0; /* Remove any default margin */
+}
+
+/* Style for screens larger than 600px (desktop devices) */
+@media (min-width: 600px) {
   .image-container {
-    width: 95%;
-    margin: 5%;
+    width: calc(100% / 3 - 2%); /* Show 3 images per row on desktop with a 1% margin */
+    margin: 1%; /* Add a 1% margin between images */
   }
 }
-img {
-    width: 30%;
-    margin: 1%;
-  }
 
-@media (max-width: 600px) {
+/* Style for all screen sizes */
 img {
-    width: 95%;
-    margin: 5%;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Make the image fill the container and maintain aspect ratio */
+  margin: 0; /* Remove any default margin */
+}
+
+/* Style for screens larger than 600px (desktop devices) */
+@media (min-width: 600px) {
+  img {
+    width: calc(100% / 3 - 2%); /* Show 3 images per row on desktop with a 1% margin */
+    margin: 1%; /* Add a 1% margin between images */
   }
 }
