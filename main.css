@@ -124,8 +124,8 @@ main {
 
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -5%;
+  left: -5%;
   bottom: 0;
   right: 0;
   display: flex;
@@ -138,12 +138,13 @@ main {
   color: white;
   font-size: 1.2em;
   text-align: center;
-  width: 100%;
-  height: 100%;
+  width: 110%; /* Increase the width to cover any gaps caused by the left and top adjustments */
+  height: 110%; /* Increase the height to cover any gaps caused by the left and top adjustments */
   margin: 1%;
   padding: 5%;
   box-sizing: border-box;
 }
+
 
 .image-container:hover .overlay {
   opacity: 1;
