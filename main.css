@@ -107,10 +107,7 @@ body {
   background-color: #555;
 }
 
-.main {
-  margin-top: 70px;
-  /* This is to make sure the content doesn't go behind the header */
-}
+
 main {
   margin-top: 70px;
   /* This is to make sure the content doesn't go behind the header */
