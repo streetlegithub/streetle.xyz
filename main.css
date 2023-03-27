@@ -16,24 +16,17 @@ p {
 
 
 
-/* Small screens */
-@media (max-width: 576px) {
-  img {
-    width: 100%;
-  }
+/* Default style for all screen sizes */
+img {
+  width: 30%; /* Show 3 images per row on desktop */
+  margin: 1%;
 }
 
-/* Medium screens */
-@media (min-width: 576px) and (max-width: 768px) {
+/* Style for screens smaller than 600px (mobile devices) */
+@media (max-width: 600px) {
   img {
-    width: 75%;
-  }
-}
-
-/* Large screens */
-@media (min-width: 768px) {
-  img {
-    width: 50%;
+    width: 80%; /* Show 1 image per row on mobile */
+    margin: 5%;
   }
 }
 
