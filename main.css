@@ -19,14 +19,14 @@ p {
 /* Default style for all screen sizes */
 img {
   width: 30%; /* Show 3 images per row on desktop */
-  margin: 6%;
+  margin: 1%;
 }
 
 /* Style for screens smaller than 600px (mobile devices) */
 @media (max-width: 600px) {
   img {
     width: 85%; /* Show 1 image per row on mobile */
-    margin: 10%;
+    margin: 5%;
   }
 }
 
