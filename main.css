@@ -115,65 +115,9 @@ main {
 }
 
 /* IMAGGGHEEEEE */
-.image-container {
-  position: relative;
-  width: 30%;
-  margin: 1%;
-  display: inline-block;
-}
-
-.overlay {
-  position: absolute;
-  top: -5%;
-  left: -5%;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 1.2em;
-  text-align: center;
-  width: 100%; /* Increase the width to cover any gaps caused by the left and top adjustments */
-  height: 100%; /* Increase the height to cover any gaps caused by the left and top adjustments */
-  margin: 1%;
-  padding: 5%;
-  box-sizing: border-box;
-}
 
 
-.image-container:hover .overlay {
-  opacity: 1;
-}
 
-.overlay h3 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.overlay p {
-  margin: 0;
-}
-
-/* Style for all screen sizes */
-.image-container {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Make the image fill the container and maintain aspect ratio */
-  margin: 0; /* Remove any default margin */
-}
-
-/* Style for screens larger than 600px (desktop devices) */
-@media (min-width: 600px) {
-  .image-container {
-    width: calc(100% / 3 - 2%); /* Show 3 images per row on desktop with a 1% margin */
-    margin: 1%; /* Add a 1% margin between images */
-  }
-}
 
 /* Style for all screen sizes */
 img {
