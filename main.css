@@ -138,8 +138,8 @@ main {
   color: white;
   font-size: 1.2em;
   text-align: center;
-  width: 110%; /* Increase the width to cover any gaps caused by the left and top adjustments */
-  height: 110%; /* Increase the height to cover any gaps caused by the left and top adjustments */
+  width: 100%; /* Increase the width to cover any gaps caused by the left and top adjustments */
+  height: 100%; /* Increase the height to cover any gaps caused by the left and top adjustments */
   margin: 1%;
   padding: 5%;
   box-sizing: border-box;
