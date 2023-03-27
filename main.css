@@ -128,6 +128,8 @@ main {
 /* IMAGGGHEEEEE */
 .image-container {
   position: relative;
+  width: 30%;
+  margin: 1%;
   display: inline-block;
 }
 
@@ -147,6 +149,10 @@ main {
   color: white;
   font-size: 1.2em;
   text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 20%;
+  box-sizing: border-box;
 }
 
 .image-container:hover .overlay {
@@ -162,22 +168,9 @@ main {
   margin: 0;
 }
 
-/* Adjust the following styles to your liking */
-.image-container img {
-  width: 100%;
-}
-
-.overlay {
-  /* Center the content */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.overlay h3 {
-  font-size: 2em;
-}
-
-.overlay p {
-  font-size: 1.5em;
+@media (max-width: 600px) {
+  .image-container {
+    width: 85%;
+    margin: 5%;
+  }
 }
