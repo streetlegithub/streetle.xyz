@@ -1,6 +1,9 @@
 body {
   background-color: #191a1d;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+
 h1 {
   color: #FF8C00; /* orange yellow */
 }
@@ -12,9 +15,6 @@ h2 {
 p {
   color: #eee; /* light grey */
 }
-
-
-
 
 /* Default style for all screen sizes */
 img {
@@ -33,11 +33,6 @@ img {
 @font-face {
   font-family: header;
   src: url(header.otf);
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
 }
 
 .header {
@@ -109,11 +104,6 @@ body {
 
 .main {
   margin-top: 70px;
-  /* This is to make sure the content doesn't go behind the header */
-}
-main {
-  margin-top: 70px;
-  /* This is to make sure the content doesn't go behind the header */
 }
 
 @keyframes slide-down {
@@ -126,8 +116,6 @@ main {
     transform: translateY(0);
   }
 }
-
-
 
 .image-container {
   position: relative;
@@ -156,23 +144,24 @@ main {
   height: 50%;
 }
 
-/* Small screens */
+/* Responsive design for different screen sizes */
 @media (max-width: 576px) {
+  img {
+    width: 80%;
+    margin: 5%;
+  }
   .overlay {
     width: 100%;
   }
 }
 
-/* Medium screens */
 @media (min-width: 576px) and (max-width: 768px) {
-  .overlay {
-    width: 75%;
+  img {
+    width: 30%;
+    margin: 1%;
   }
-}
-
-/* Large screens */
-@media (min-width: 768px) {
   .overlay {
+
     width: 50%;
   }
 }
