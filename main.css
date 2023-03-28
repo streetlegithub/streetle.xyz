@@ -122,24 +122,32 @@ main {
 
 /* Style for all screen sizes */
 .image-container {
+  position: relative;
   width: 100%;
   height: auto;
-  object-fit: cover; /* Make the image fill the container and maintain aspect ratio */
-  margin: 0; /* Remove any default margin */
+  margin: 1% 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
-/* Style for screens larger than 600px (desktop devices) */
-@media (min-width: 600px) {
-  .image-container {
-    width: calc(100% / 3 - 2%); /* Show 3 images per row on desktop with a 1% margin */
-    margin: 1%; /* Add a 1% margin between images */
-  }
+.image-container > a {
+  width: calc(33.33% - 2%);
+  margin-bottom: 2%;
+  display: block;
+  position: relative;
 }
 
-/* Style for screens smaller than 600px (mobile devices) */
-@media (max-width: 599px) {
-  .image-container {
-    width: 100%; /* Show one image per row on mobile with no margin */
-    margin: 0;
+.image-container > a > img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .image-container > a {
+    width: 100%;
+    margin-bottom: 5%;
   }
 }
