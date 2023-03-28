@@ -14,6 +14,11 @@ p {
 }
 
 
+a {
+  outline: none;
+}
+
+
 
 
 /* Default style for all screen sizes */
