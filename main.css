@@ -121,30 +121,3 @@ main {
 
 
 /* Style for all screen sizes */
-.image-container {
-  position: relative;
-  width: 100%;
-  height: auto;
-  margin-bottom: 20px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.image-container {
-  width: 30%;
-  margin-right: 2%;
-  margin-bottom: 10px;
-  object-fit: cover;
-}
-
-@media screen and (max-width: 600px) {
-  .image-container {
-    width: 100%;
-    margin-right: 0;
-  }
-}
-.image-container img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
