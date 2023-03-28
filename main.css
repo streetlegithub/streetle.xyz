@@ -16,8 +16,12 @@ p {
 
 a {
   outline: none;
+  text-decoration: none;
 }
-
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
 
 
 
