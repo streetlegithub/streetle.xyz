@@ -115,9 +115,48 @@ main {
 }
 
 /* IMAGGGHEEEEE */
-
-
-
-
-
-/* Style for all screen sizes */
+		.row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		
+		.col {
+			flex-basis: calc(33.33% - 10px);
+			margin-bottom: 20px;
+			position: relative;
+		}
+		
+		.col img {
+			width: 100%;
+			height: auto;
+		}
+		
+		.caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 10px;
+			background-color: rgba(0,0,0,0.5);
+			color: #fff;
+			font-size: 16px;
+			line-height: 1.5;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+		}
+		
+		.col:hover .caption {
+			opacity: 1;
+		}
+		
+		/* Styles for mobile */
+		@media screen and (max-width: 768px) {
+			.row {
+				display: block;
+			}
+			
+			.col {
+				flex-basis: 100%;
+			}
+		}
