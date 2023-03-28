@@ -125,29 +125,21 @@ main {
   position: relative;
   width: 100%;
   height: auto;
-  margin: 1% 0;
+  margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  box-sizing: border-box;
 }
 
-.image-container > a {
-  width: calc(33.33% - 2%);
-  margin-bottom: 2%;
-  display: block;
-  position: relative;
-}
-
-.image-container > a > img {
-  width: 100%;
-  height: auto;
+.image-container img {
+  width: 30%;
+  margin-right: 2%;
+  margin-bottom: 10px;
   object-fit: cover;
 }
 
-@media (max-width: 600px) {
-  .image-container > a {
+@media screen and (max-width: 600px) {
+  .image-container img {
     width: 100%;
-    margin-bottom: 5%;
+    margin-right: 0;
   }
 }
