@@ -130,7 +130,7 @@ main {
   flex-wrap: wrap;
 }
 
-.image-container img {
+.image-container {
   width: 30%;
   margin-right: 2%;
   margin-bottom: 10px;
@@ -138,7 +138,7 @@ main {
 }
 
 @media screen and (max-width: 600px) {
-  .image-container img {
+  .image-container {
     width: 100%;
     margin-right: 0;
   }
