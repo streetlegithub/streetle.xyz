@@ -119,8 +119,9 @@ main {
 
 
 
+
 /* Style for all screen sizes */
-img {
+.image-container {
   width: 100%;
   height: auto;
   object-fit: cover; /* Make the image fill the container and maintain aspect ratio */
@@ -129,8 +130,16 @@ img {
 
 /* Style for screens larger than 600px (desktop devices) */
 @media (min-width: 600px) {
-  img {
-    width: 28%
+  .image-container {
+    width: calc(100% / 3 - 2%); /* Show 3 images per row on desktop with a 1% margin */
     margin: 1%; /* Add a 1% margin between images */
+  }
+}
+
+/* Style for screens smaller than 600px (mobile devices) */
+@media (max-width: 599px) {
+  .image-container {
+    width: 100%; /* Show one image per row on mobile with no margin */
+    margin: 0;
   }
 }
