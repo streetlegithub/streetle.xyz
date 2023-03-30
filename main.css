@@ -38,6 +38,13 @@ body {
   font-family: Arial, sans-serif;
 }
 
+hr {
+  border-style: dashed;
+  border-width: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .header {
   background-color: #444;
   color: #fff;
