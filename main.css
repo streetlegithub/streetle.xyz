@@ -69,6 +69,7 @@ body {
   max-width: 100%;
 }
 
+
 .name {
   font-size: 28px;
   font-family: header, Arial, sans-serif;
@@ -180,7 +181,9 @@ button {
 		.col:hover .caption {
 			opacity: 1;
 		}
-		
+.ima img {
+  width: 50%;
+}	
 		/* Styles for mobile */
 		@media screen and (max-width: 768px) {
 			.row {
@@ -201,5 +204,9 @@ button {
 				padding: 10px;
 				margin-top: 0px;
 				opacity: 1;
+                    
 			}
+.ima img {
+  width: 100%;
+}
 		}
