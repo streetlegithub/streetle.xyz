@@ -130,6 +130,21 @@ main {
   }
 }
 
+
+
+button {
+  background-color: #444;
+  border: 1px solid #ccc;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
+
+
 /* IMAGGGHEEEEE */
 		.row {
 			display: flex;
