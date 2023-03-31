@@ -23,6 +23,13 @@ a:visited {
   text-decoration: none;
 }
 
+hr {
+  border-color: #333;
+  border-style: dashed;
+  border-width: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 
 /* Default style for all screen sizes */
