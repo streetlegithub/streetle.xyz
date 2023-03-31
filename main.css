@@ -38,68 +38,6 @@ body {
   font-family: Arial, sans-serif;
 }
 
-footer {
-  display: block;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-nav li {
-  display: inline-block;
-}
-
-nav a {
-  display: block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Media query for desktop */
-@media screen and (min-width: 768px) {
-  footer {
-    display: flex;
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 200px;
-    background-color: #333;
-    color: #fff;
-    text-align: left;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  
-  nav li {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  nav a {
-    padding: 0;
-  }
-}
-
-
 .header {
   background-color: #444;
   color: #fff;
