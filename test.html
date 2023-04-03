@@ -19,31 +19,34 @@
         menu.classList.toggle("show");
       }
     </script>
-<script>
-function downloadVideo() {
-    var videoLink = document.getElementById('videoLink').value;
-    var videoId = getVideoId(videoLink);
+<script src="https://cdn.jsdelivr.net/npm/youtube-dl-proxy@1.1.1/dist/youtube-dl-proxy.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/youtube-dl-proxy@1.1.1/dist/youtube-dl-proxy.min.js"></script>
 
-    if (videoId === null) {
-        alert('Invalid YouTube Video Link');
-    } else {
-        var downloadLink = 'https://sfrom.net/api/v1/save?url=https://www.youtube.com/watch?v=' + videoId;
-        window.open(downloadLink);
-    }
-}
-
-function getVideoId(videoLink) {
-    var regex = /(?:\?v=|&v=|youtu\.be\/)(.*?)(?:\?|&|$)/;
-    var match = videoLink.match(regex);
-    if (match) {
-        return match[1];
-    }
-    return null;
-}
-</script>
 <noscript>
    <meta http-equiv="refresh" content="0; URL=/javascript.html">
 </noscript>
+
+<script>
+function downloadVideo() {
+  var videoLink = document.getElementById("videoLink").value;
+  var videoId = getVideoId(videoLink);
+  if (videoId === null) {
+    alert("Invalid YouTube Video Link");
+  } else {
+    var downloadUrl = "https://www.youtube.com/watch?v=" + videoId;
+    window.location.href = "/youtube-dl-proxy/download?format=best&url=" + encodeURIComponent(downloadUrl);
+  }
+}
+
+function getVideoId(videoLink) {
+  var regex = /(?:\?v=|&v=|youtu\.be\/)(.*?)(?:\?|&|$)/;
+  var match = videoLink.match(regex);
+  if (match) {
+    return match[1];
+  }
+  return null;
+}
+</script>
 
 
 <title>streetle - Testing</title>
@@ -67,8 +70,11 @@ function getVideoId(videoLink) {
 <main>
 <h1>Testing</h1>
 <p>Testing Page</p>
-<input type="text" id="videoLink" placeholder="Enter YouTube Video Link">
-<button onclick="downloadVideo()">Download Video</button>
+<form>
+  <label for="videoLink">Enter YouTube Video Link:</label>
+  <input type="text" id="videoLink" name="videoLink" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
+  <button type="button" onclick="downloadVideo()">Download Video</button>
+</form>
 
 </main>
 <footer>
