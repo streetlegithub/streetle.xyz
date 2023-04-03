@@ -19,6 +19,27 @@
         menu.classList.toggle("show");
       }
     </script>
+function downloadVideo() {
+    var videoLink = document.getElementById('videoLink').value;
+    var videoId = getVideoId(videoLink);
+
+    if (videoId === null) {
+        alert('Invalid YouTube Video Link');
+    } else {
+        var downloadLink = 'https://www.y2mate.com/youtube/' + videoId;
+        window.open(downloadLink);
+    }
+}
+
+function getVideoId(videoLink) {
+    var regex = /(?:\?v=|&v=|youtu\.be\/)(.*?)(?:\?|&|$)/;
+    var match = videoLink.match(regex);
+    if (match) {
+        return match[1];
+    }
+    return null;
+}
+
 <noscript>
    <meta http-equiv="refresh" content="0; URL=/javascript.html">
 </noscript>
@@ -45,6 +66,8 @@
 <main>
 <h1>Testing</h1>
 <p>Testing Page</p>
+<input type="text" id="videoLink" placeholder="Enter YouTube Video Link">
+<button onclick="downloadVideo()">Download Video</button>
 
 </main>
 <footer>
