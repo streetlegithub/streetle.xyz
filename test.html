@@ -27,7 +27,7 @@ function downloadVideo() {
     if (videoId === null) {
         alert('Invalid YouTube Video Link');
     } else {
-        var downloadLink = 'https://www.y2mate.com/youtube/' + videoId;
+        var downloadLink = 'https://sfrom.net/api/v1/save?url=https://www.youtube.com/watch?v=' + videoId;
         window.open(downloadLink);
     }
 }
