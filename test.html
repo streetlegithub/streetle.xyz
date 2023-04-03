@@ -26,6 +26,7 @@
    <meta http-equiv="refresh" content="0; URL=/javascript.html">
 </noscript>
 
+<script src="https://unpkg.com/youtube-dl/dist/youtube-dl.js"></script>
 <script>
 function downloadVideo() {
   var videoLink = document.getElementById("videoLink").value;
@@ -34,7 +35,18 @@ function downloadVideo() {
     alert("Invalid YouTube Video Link");
   } else {
     var downloadUrl = "https://www.youtube.com/watch?v=" + videoId;
-    window.location.href = "/youtube-dl-proxy/download?format=best&url=" + encodeURIComponent(downloadUrl);
+    var ytdl = new YoutubeDL();
+    ytdl.exec(downloadUrl, ['-f', 'best'], function(err, output) {
+      if (err) {
+        alert("Error: " + err.message);
+      } else {
+        var filename = output[0].filename;
+        var link = document.createElement("a");
+        link.download = filename;
+        link.href = "/" + filename;
+        link.click();
+      }
+    });
   }
 }
 
@@ -47,6 +59,7 @@ function getVideoId(videoLink) {
   return null;
 }
 </script>
+
 
 
 <title>streetle - Testing</title>
