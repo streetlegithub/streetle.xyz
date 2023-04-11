@@ -19,50 +19,12 @@
         menu.classList.toggle("show");
       }
     </script>
-<script src="https://cdn.jsdelivr.net/npm/youtube-dl-proxy@1.1.1/dist/youtube-dl-proxy.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/youtube-dl-proxy@1.1.1/dist/youtube-dl-proxy.min.js"></script>
-
 <noscript>
    <meta http-equiv="refresh" content="0; URL=/javascript.html">
 </noscript>
 
-<script src="https://unpkg.com/youtube-dl/dist/youtube-dl.js"></script>
-<script>
-function downloadVideo() {
-  var videoLink = document.getElementById("videoLink").value;
-  var videoId = getVideoId(videoLink);
-  if (videoId === null) {
-    alert("Invalid YouTube Video Link");
-  } else {
-    var downloadUrl = "https://www.youtube.com/watch?v=" + videoId;
-    var ytdl = new YoutubeDL();
-    ytdl.exec(downloadUrl, ['-f', 'best'], function(err, output) {
-      if (err) {
-        alert("Error: " + err.message);
-      } else {
-        var filename = output[0].filename;
-        var link = document.createElement("a");
-        link.download = filename;
-        link.href = "/" + filename;
-        link.click();
-      }
-    });
-  }
-}
 
-function getVideoId(videoLink) {
-  var regex = /(?:\?v=|&v=|youtu\.be\/)(.*?)(?:\?|&|$)/;
-  var match = videoLink.match(regex);
-  if (match) {
-    return match[1];
-  }
-  return null;
-}
-</script>
-
-
-
-<title>streetle - Testing</title>
+<title>streetle - Test</title>
 
   </head>
  <body>
@@ -81,13 +43,11 @@ function getVideoId(videoLink) {
       </div>
     </div>
 <main>
-<h1>Testing</h1>
-<p>Testing Page</p>
-<form>
-  <label for="videoLink">Enter YouTube Video Link:</label>
-  <input type="text" id="videoLink" name="videoLink" placeholder="e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
-  <button type="button" onclick="downloadVideo()">Download Video</button>
-</form>
+<h1>Test</h1>
+<p>Whoa! You found a testing page!
+
+You're part of the cool kids now 🤙 </p>
+
 
 </main>
 <footer>
