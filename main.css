@@ -131,7 +131,9 @@ main {
   }
 }
 
-
+img {
+  width: 50%;
+}
 
 button {
   background-color: #444;
