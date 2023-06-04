@@ -116,7 +116,7 @@ main {
 }
 
 .col {
-  flex-basis: calc(33.33% - 10px);
+  flex-basis: calc(50% - 10px);
   margin-bottom: 20px;
   position: relative;
 }
