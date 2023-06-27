@@ -1,100 +1,82 @@
 <!DOCTYPE html>
 <html>
   <head>
-	  <!-- discord embed -->
-<meta content="streetle" property="og:title" />
-<meta content="Hi, I'm streetle :)" property="og:description" />
-<meta content="https://streetle.ml" property="og:url" />
-<meta content="https://www.streetle.ml/logo.png" property="og:image" />
-<meta content="#444" data-react-helmet="true" name="theme-color" />
-	  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4EYLESFVQT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- discord embed -->
+    <meta content="streetle" property="og:title" />
+    <meta content="Hi, I'm streetle :)" property="og:description" />
+    <meta content="https://streetle.ml" property="og:url" />
+    <meta content="https://www.streetle.ml/logo.png" property="og:image" />
+    <meta content="#444" data-react-helmet="true" name="theme-color" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4EYLESFVQT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-4EYLESFVQT');
-</script>
-   <link rel="stylesheet" href="main.css">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-4EYLESFVQT');
+    </script>
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
       function toggleMenu() {
         var menu = document.querySelector(".menu");
         menu.classList.toggle("show");
       }
     </script>
-<noscript>
-   <meta http-equiv="refresh" content="0; URL=/javascript.html">
-</noscript>
-
-
-<title>streetle</title>
-
+    <noscript>
+      <meta http-equiv="refresh" content="0; URL=/javascript.html">
+    </noscript>
+    <title>streetle</title>
   </head>
- <body>
+  <body>
     <div class="header">
-
       <img src="logo.png" alt="My Logo" class="logo">
-
-
       <h1 class="name">streetle</h1>
-
       <button class="menu-btn" onclick="toggleMenu()">☰</button>
       <div class="menu">
         <a href="index">Home</a>
         <a href="about">About</a>
         <a href="contact">Contact</a>
-	<a href="../discord">Discord</a>
+        <a href="../discord">Discord</a>
         <a href="../credits">Credits</a>
         <a href="../install">Installation</a>
       </div>
     </div>
-<main>
-<h1>My Minecraft Mods</h1>
-<p>Page is a bit buggy on desktop rn. Working on it!</p> <br>
-<div class="row">
-<a href="https://streetle.ml/mods/rgb-hotbars">
-		<div class="col">		   
-    <img src="img/hotbar.jpg" alt="rgb-hotbars">
-  		<div class="caption">
-				<h3>RGB Hotbars</h3>
-				<p>Make your hotbars any color you choose!</p>
-			</div>
-		</div>
-</a>
-<a href="https://streetle.ml/mods/rgb-hearts">
-		<div class="col">
-    <img src="img/hearts.jpeg" alt="rgb-hearts">
-  		<div class="caption">
-				<h3>RGB Hearts</h3>
-				<p>Change the color of your hearts!</p>
-			</div>
-		</div>
-</a>	</div>
-<a href="https://streetle.ml/mods/glass-shields">
-		<div class="col">
-    <img src="img/shields.jpeg" alt="glass-shields">
-  		<div class="caption">
-				<h3>Glass Shields</h3>
-				<p>Allow your shield to be stronger than ever!</p>
-			</div>
-		</div>
-</a>	</div>
-<a href="https://streetle.ml/mods/ingoted">
-		<div class="col">
-    <img src="img/template.png" alt="ingoted">
-  		<div class="caption">
-				<h3>Ingoted</h3>
-				<p>Make all smelted ores into ingots!</p>
-			</div>
-		</div>
-</a>	</div>
-</main>
-<footer>
-<hr>
-<p>Made by streetle</p></footer>
-
- </body>
+    <main>
+      <h1>My Minecraft Mods</h1>
+      <p>Page is a bit buggy on desktop rn. Working on it!</p>
+      <br>
+      <a href="/mods/rgb-hotbars" width="49%">
+        <div class="post">
+          <img class="center" src="template.jpeg" width="49%">
+          <div class="posttext">
+            <h4>RGB Hotbars</h4>
+          </div>
+        </div>
+      </a>
+      <a href="/mods/rgb-hearts" width="49%">
+        <div class="post">
+          <img class="center" src="template.jpeg" width="49%">
+          <div class="posttext">
+            <h4>RGB Hearts</h4>
+          </div>
+        </div>
+      </a>
+      <a href="/mods/glass-shields" width="49%">
+        <div class="post">
+          <img class="center" src="template.jpeg" width="49%">
+          <div class="posttext">
+            <h4>Glass Shields</h4>
+          </div>
+        </div>
+      </a>
+    </main>
+    <footer>
+      <hr>
+      <p>Made by streetle</p>
+    </footer>
+  </body>
 </html>
