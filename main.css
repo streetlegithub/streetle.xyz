@@ -122,61 +122,60 @@ main {
   /* This is to make sure the content doesn't go behind the header */
 }
 
-/* Image grid styles */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.center {
+  display: block;
+  text-align: center;
+  width: 90%;
 }
 
-.col {
-  flex-basis: calc(50% - 10px);
-  margin-bottom: 20px;
+.post {
   position: relative;
+  display: inline;
+  font-family: Arial;
 }
 
-.col img {
-  width: 100%;
-  height: auto;
-}
-
-.caption {
+/* Bottom left text */
+.posttext {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.5;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  bottom: 20px;
+  left: 20px;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 70%;
+}
+@media screen and (min-width: 800px) {
+  .post {
+  position: relative;
+  display: inline;
+  font-family: Arial;
+  width: 24%;
+  }
+  .post img {
+  width: 24%; /* Adjust the width as needed */
+  display: inline;
+  height: auto; /* Adjust the height as needed */
+  }
+  .post a {
+  width: 24%; /* Adjust the width as needed */
+  display: inline;
+  }
+
 }
 
-.col:hover .caption {
-  opacity: 1;
-}
-
-/* Styles for mobile */
-@media screen and (max-width: 768px) {
-  .row {
-    display: block;
+@media screen and (max-width: 800px) {
+  .post {
+  position: relative;
+  font-family: Arial;
+  width: 100%;
+  }
+  .post img {
+  width: 100%; /* Adjust the width as needed */
+  height: auto; /* Adjust the height as needed */
+  }
+  .post a {
+  width: 100%; /* Adjust the width as needed */
   }
 
-  .col {
-    flex-basis: 100%;
-    position: relative;
-  }
-
-  .col .caption {
-    position: static;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 10px;
-    margin-top: 0;
-    opacity: 1;
-  }
 }
