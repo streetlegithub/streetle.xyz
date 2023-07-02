@@ -122,12 +122,6 @@ main {
   /* This is to make sure the content doesn't go behind the header */
 }
 
-.center {
-  display: block;
-  text-align: center;
-  width: 90%;
-}
-
 .post {
   position: relative;
   display: inline;
@@ -161,7 +155,9 @@ main {
   width: 24%; /* Adjust the width as needed */
   display: inline;
   }
-  .titles img {
+  .center {
+  display: block;
+  text-align: center;
   width: 35%;
   }
 
@@ -179,6 +175,11 @@ main {
   }
   .post a {
   width: 100%; /* Adjust the width as needed */
+  }
+  .center {
+  display: block;
+  text-align: center;
+  width: 90%;
   }
 
 }
