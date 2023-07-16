@@ -190,7 +190,9 @@ main {
   text-align: center;
   width: 35%;
   }
-
+  .showcase {
+  width: 33%;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -211,5 +213,7 @@ main {
   text-align: center;
   width: 90%;
   }
-
+  .showcase {
+  width: 95%;
+  }
 }
