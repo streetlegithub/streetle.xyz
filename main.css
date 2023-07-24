@@ -19,25 +19,30 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .btn:hover {
   background-color: RoyalBlue;
 }
+
 .changelog {
   width: 320px;
   padding: 10px;
   border: 5px solid gray;
   margin: 0;
 }
+
 .center {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
 }
+
 /* Default styles for all screen sizes */
 body {
   background-color: #191a1d;
-  color: #eee; /* light grey */
+  color: #eee;
+  /* light grey */
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -51,7 +56,8 @@ body {
 }
 
 h1 {
-  color: #FF8C00; /* orange yellow */
+  color: #FF8C00;
+  /* orange yellow */
 }
 
 h2 {
@@ -89,7 +95,7 @@ hr {
   justify-content: space-between;
   padding: 10px 10px;
   z-index: 1;
-  height: 10vh; 
+  height: 10vh;
 }
 
 .logo {
@@ -169,51 +175,66 @@ main {
   padding-right: 20px;
   opacity: 70%;
 }
+
 @media screen and (min-width: 800px) {
   .post {
-  position: relative;
-  display: inline;
-  font-family: Arial;
-  width: 24%;
+    position: relative;
+    display: inline;
+    font-family: Arial;
+    width: 24%;
   }
+
   .post img {
-  width: 24%; /* Adjust the width as needed */
-  display: inline;
-  height: auto; /* Adjust the height as needed */
+    width: 24%;
+    /* Adjust the width as needed */
+    display: inline;
+    height: auto;
+    /* Adjust the height as needed */
   }
+
   .post a {
-  width: 24%; /* Adjust the width as needed */
-  display: inline;
+    width: 24%;
+    /* Adjust the width as needed */
+    display: inline;
   }
+
   .center {
-  display: block;
-  text-align: center;
-  width: 35%;
+    display: block;
+    text-align: center;
+    width: 35%;
   }
+
   .showcase {
-  width: 33%;
+    width: 33%;
   }
 }
 
 @media screen and (max-width: 800px) {
   .post {
-  position: relative;
-  font-family: Arial;
-  width: 100%;
+    position: relative;
+    font-family: Arial;
+    width: 100%;
   }
+
   .post img {
-  width: 100%; /* Adjust the width as needed */
-  height: auto; /* Adjust the height as needed */
+    width: 100%;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Adjust the height as needed */
   }
+
   .post a {
-  width: 100%; /* Adjust the width as needed */
+    width: 100%;
+    /* Adjust the width as needed */
   }
+
   .center {
-  display: block;
-  text-align: center;
-  width: 90%;
+    display: block;
+    text-align: center;
+    width: 90%;
   }
+
   .showcase {
-  width: 95%;
+    width: 95%;
   }
 }
