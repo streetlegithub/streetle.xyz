@@ -1,2 +1,3 @@
-# streetle-v2
-streetle.ml v2
+# streetle.xyz
+A website dedicated to my Minecraft Addons/Worlds
+Previously known as "streetle.ml"
