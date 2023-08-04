@@ -55,13 +55,19 @@ body {
   width: 20%;
 }
 
+p {
+  font-size: 28px;
+}
+
 h1 {
   color: #FF8C00;
+  font-size: 50px;
   /* orange yellow */
 }
 
 h2 {
   color: #FFA500;
+  font-size: 40px;
 }
 
 a {
