@@ -211,7 +211,10 @@ main {
   }
 
   .showcase {
-    width: 33%;
+    width: 19%;
+  }
+  .landscape {
+    width: 49%;
   }
 }
 
@@ -241,6 +244,9 @@ main {
   }
 
   .showcase {
+    width: 95%;
+  }
+  .landscape {
     width: 95%;
   }
 }
