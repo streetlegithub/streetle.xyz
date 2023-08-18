@@ -1,12 +1,4 @@
-.centertext {
-  font-size: 25px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.btn {
+.downloadbutton {
   background-color: DodgerBlue;
   border: none;
   color: white;
@@ -20,7 +12,7 @@
   margin-right: auto;
 }
 
-.btn:hover {
+.downloadbutton:hover {
   background-color: RoyalBlue;
 }
 
@@ -31,43 +23,29 @@
   margin: 0;
 }
 
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-/* Default styles for all screen sizes */
 body {
   background-color: #191a1d;
   color: #eee;
-  /* light grey */
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-.text img {
-  width: 35%;
-}
-
-.preview img {
-  width: 20%;
-}
-
 p {
-  font-size: 28px;
+  font-size: 20px;
 }
 
 h1 {
   color: #FF8C00;
-  font-size: 50px;
-  /* orange yellow */
+  font-size: 40px;
 }
 
 h2 {
   color: #FFA500;
-  font-size: 40px;
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 30px;
 }
 
 a {
@@ -84,11 +62,10 @@ hr {
   border-color: #333;
   border-style: dashed;
   border-width: 1px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 20px;
 }
 
-/* Header styles */
 .header {
   background-color: #444;
   color: #fff;
@@ -101,17 +78,6 @@ hr {
   justify-content: space-between;
   padding: 10px 10px;
   z-index: 1;
-  height: 10vh;
-}
-
-.logo {
-  height: 40px;
-  width: 40px;
-}
-
-.logo img {
-  width: auto;
-  max-width: 100%;
 }
 
 .name {
@@ -122,13 +88,19 @@ hr {
   flex: 1;
 }
 
+.logo {
+  height: 40px;
+  width: 40px;
+}
+
 .menu-btn {
-  font-size: 28px;
+  font-size: 21px;
   border: none;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
   margin-right: 20px;
+  margin-left: 8px;
 }
 
 .menu {
@@ -138,30 +110,27 @@ hr {
   right: 40px;
   background-color: #444;
   color: #fff;
-  padding: 10px 20px;
+  padding: 15px 15px;
   z-index: 2;
 }
 
 .menu.show {
   display: block;
-  animation: slide-down 0.5s;
 }
 
 .menu a {
   display: block;
   color: #fff;
   text-decoration: none;
-  padding: 5px 0;
+  padding: 5px 5px;
 }
 
 .menu a:hover {
   background-color: #555;
 }
 
-/* Main content styles */
 main {
-  margin-top: 15vh;
-  /* This is to make sure the content doesn't go behind the header */
+  margin-top: 8vh;
 }
 
 .post {
@@ -192,30 +161,25 @@ main {
 
   .post img {
     width: 24%;
-    /* Adjust the width as needed */
     display: inline;
     height: auto;
-    /* Adjust the height as needed */
   }
 
   .post a {
     width: 24%;
-    /* Adjust the width as needed */
     display: inline;
   }
 
-  .center {
-    display: block;
-    text-align: center;
-    width: 35%;
+  .images {
+    width: 49%;
   }
 
-  .showcase {
+  .verticalimages {
     width: 19%;
   }
 
-  .landscape {
-    width: 49%;
+  .text {
+    width: 50%
   }
 }
 
@@ -224,30 +188,28 @@ main {
     position: relative;
     font-family: Arial;
     width: 100%;
+    display: block;
+    text-align: center;
   }
 
   .post img {
     width: 100%;
-    /* Adjust the width as needed */
     height: auto;
-    /* Adjust the height as needed */
   }
 
   .post a {
     width: 100%;
-    /* Adjust the width as needed */
   }
 
-  .center {
-    display: block;
-    text-align: center;
-    width: 90%;
+  .images {
+    width: 95%;
   }
 
-  .showcase {
+  .verticalimages {
     width: 95%;
   }
-  .landscape {
-    width: 95%;
+
+  .text {
+    width: 95%
   }
 }
