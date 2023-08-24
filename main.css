@@ -70,7 +70,7 @@ hr {
   border-color: #333;
   border-style: dashed;
   border-width: 1px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -139,7 +139,6 @@ hr {
 
 main {
   margin-top: 8vh;
-  margin-bottom: 12vh;
 }
 
 .post {
