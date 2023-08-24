@@ -215,5 +215,6 @@ main {
 }
 
 .bottom-ad {
+  position: absolute;
   bottom: 0px
 }
