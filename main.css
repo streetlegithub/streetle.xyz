@@ -131,6 +131,7 @@ hr {
 
 main {
   margin-top: 8vh;
+  margin-bottom: 12vh;
 }
 
 .post {
@@ -219,4 +220,12 @@ main {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 0.3s ease; /* Add smooth transition */
+}
+
+.minimize-button {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  cursor: pointer;
 }
