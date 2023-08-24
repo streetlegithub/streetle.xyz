@@ -3,7 +3,8 @@
   bottom: 0px;
   margin: 0 auto;
   width: 75%;
-  z-index: 1; /* Ensure the ad container is above other content */
+  z-index: 1;
+  /* Ensure the ad container is above other content */
 }
 
 .downloadbutton {
