@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 0px;
   margin: 0 auto;
-  width: 75%;
+  width: 100%;
   z-index: 1;
   /* Ensure the ad container is above other content */
 }
