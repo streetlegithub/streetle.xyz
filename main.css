@@ -1,3 +1,19 @@
+.bottom-ad {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  /* Add smooth transition */
+}
+
+.minimize-button {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  cursor: pointer;
+}
+
 .downloadbutton {
   background-color: DodgerBlue;
   border: none;
@@ -213,19 +229,4 @@ main {
   .text {
     width: 95%
   }
-}
-
-.bottom-ad {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: all 0.3s ease; /* Add smooth transition */
-}
-
-.minimize-button {
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  cursor: pointer;
 }
