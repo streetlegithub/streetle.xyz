@@ -1,25 +1,21 @@
 .bottom-ad {
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%; /* Ensures the bottom ad takes full width */
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Aligns the ad container at the bottom */
   z-index: 1; /* Ensure the ad container is above other content */
 }
 
 .ad-container {
-  position: relative; /* Needed for the minimize button positioning */
-  display: block;
-  margin-bottom: 40px; /* Add margin to create space for the button */
+  width: 100%; /* Make the ad container full width */
 }
 
 .minimize-button {
   position: absolute;
-  top: -20px;
-  left: -20px;
+  top: 10px; /* Adjust the top position */
+  left: 10px; /* Adjust the left position */
   cursor: pointer;
   background-color: #333;
   color: #fff;
@@ -46,6 +42,7 @@
 .hide {
   display: none;
 }
+
 
 .downloadbutton {
   background-color: DodgerBlue;
