@@ -11,11 +11,6 @@
       minimizeButton.classList.toggle('bottom');
       var arrow = document.querySelector('.arrow');
       arrow.classList.toggle('up');
-
-      // Reset the state of the button if the ad is shown again
-      if (!adContainer.classList.contains('hide')) {
-        minimizeButton.style.top = '10px';
-      }
     }
   </script>
   <!-- Ad-Block Detection -->
@@ -148,12 +143,10 @@
     <p>Made by streetle :)<br>© 2023<br><a href="/legal">Legal</a></p>
   </footer>
   <div class="bottom-ad">
-    <div class="ad-container">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       <ins class="adsbygoogle" style="display:block;width:728px;height:90px" data-ad-client="ca-pub-5850853284840895"
         data-ad-slot="8489338533"></ins>
       <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
     <div class="minimize-button" onclick="toggleAd()">
       <span class="arrow"></span>
     </div>
