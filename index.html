@@ -5,8 +5,10 @@
   <!-- Minimize ads -->
   <script>
     function toggleAd() {
-      var adContainer = document.querySelector('.bottom-ad');
-      adContainer.classList.toggle('ad-minimized');
+      var adContainer = document.querySelector('.ad-container');
+      adContainer.classList.toggle('hide');
+      var minimizeButton = document.querySelector('.minimize-button');
+      minimizeButton.classList.toggle('bottom');
     }
   </script>
   <!-- Ad-Block Detection -->
@@ -147,18 +149,17 @@
       (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </div>
-<div class="bottom-ad">
-  <div class="minimize-button" onclick="toggleAd()">Minimize</div>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5850853284840895"
-     crossorigin="anonymous"></script>
-  <ins class="adsbygoogle"
-       style="display:block;width:728px;height:90px"
-       data-ad-client="ca-pub-5850853284840895"
-       data-ad-slot="8489338533"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-</div>
+  <div class="bottom-ad">
+    <div class="minimize-button" onclick="toggleAd()">
+      <span class="arrow-down"></span>
+    </div>
+    <div class="ad-container">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle" style="display:block;width:728px;height:90px" data-ad-client="ca-pub-5850853284840895"
+        data-ad-slot="8489338533"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
 </body>
 
 </html>
