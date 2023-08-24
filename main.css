@@ -3,15 +3,36 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  transition: all 0.3s ease;
-  /* Add smooth transition */
 }
 
 .minimize-button {
   position: absolute;
-  top: -20px;
-  left: -20px;
+  top: 0;
+  left: 0;
   cursor: pointer;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.arrow-down::before {
+  content: "\25BC";
+  /* Unicode down arrow character */
+  font-size: 14px;
+}
+
+.ad-container {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.bottom {
+  bottom: 0;
+  top: auto;
 }
 
 .downloadbutton {
