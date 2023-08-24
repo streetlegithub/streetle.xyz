@@ -213,3 +213,7 @@ main {
     width: 95%
   }
 }
+
+.bottom-ad {
+  bottom: 0px
+}
