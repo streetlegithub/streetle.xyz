@@ -7,20 +7,28 @@
 
 .minimize-button {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: -20px;
+  left: calc(50% - 20px);
   cursor: pointer;
   background-color: #333;
   color: #fff;
-  padding: 5px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure the button is above other elements */
+  transition: bottom 0.3s ease; /* Add a smooth transition */
 }
 
-.arrow-down::before {
-  content: "\25BC";
-  /* Unicode down arrow character */
-  font-size: 14px;
+.arrow::before {
+  content: "\25BC"; /* Unicode down arrow character */
+  font-size: 20px;
+}
+
+.arrow.up::before {
+  content: "\25B2"; /* Unicode up arrow character */
 }
 
 .ad-container {
@@ -29,11 +37,6 @@
 
 .hide {
   display: none;
-}
-
-.bottom {
-  bottom: 0;
-  top: auto;
 }
 
 .downloadbutton {
