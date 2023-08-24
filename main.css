@@ -3,12 +3,24 @@
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%; /* Ensures the bottom ad takes full width */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Aligns the ad container at the bottom */
+  z-index: 1; /* Ensure the ad container is above other content */
+}
+
+.ad-container {
+  position: relative; /* Needed for the minimize button positioning */
+  display: block;
+  margin-bottom: 40px; /* Add margin to create space for the button */
 }
 
 .minimize-button {
-  position: relative;
-  top: 10px;
-  left: 10px;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  cursor: pointer;
   background-color: #333;
   color: #fff;
   width: 40px;
@@ -17,23 +29,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
-  /* Ensure the button is above other elements */
+  z-index: 2; /* Ensure the button is above other elements, including ad */
+  transition: top 0.3s ease; /* Add a smooth transition */
+  font-family: Arial, sans-serif; /* Set a font that includes arrow characters */
 }
 
 .arrow::before {
-  content: "\25BC";
-  /* Unicode down arrow character */
+  content: "\25BC"; /* Unicode down arrow character */
   font-size: 20px;
 }
 
 .arrow.up::before {
-  content: "\25B2";
-  /* Unicode up arrow character */
-}
-
-.ad-container {
-  display: block;
+  content: "\25B2"; /* Unicode up arrow character */
 }
 
 .hide {
