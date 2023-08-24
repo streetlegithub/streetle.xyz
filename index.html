@@ -11,6 +11,11 @@
       minimizeButton.classList.toggle('bottom');
       var arrow = document.querySelector('.arrow');
       arrow.classList.toggle('up');
+
+      // Reset the state of the button if the ad is shown again
+      if (!adContainer.classList.contains('hide')) {
+        minimizeButton.style.top = '10px';
+      }
     }
   </script>
   <!-- Ad-Block Detection -->
