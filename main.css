@@ -1,7 +1,6 @@
 .bottom-ad {
   position: fixed;
   bottom: 0px;
-  margin: 0 auto;
   z-index: 1;
 }
 
