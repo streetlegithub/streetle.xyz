@@ -3,7 +3,6 @@
   bottom: 0px;
   right: 0px;
   z-index: 1;
-  width: 100%;
 }
 
 .downloadbutton {
@@ -219,5 +218,12 @@ main {
 
   .text {
     width: 95%
+  }
+  .bottom-ad {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    width: 100%;
   }
 }
