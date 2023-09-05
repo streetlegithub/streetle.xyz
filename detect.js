@@ -13,14 +13,14 @@ img.onload = function () {
 
 function displayAdblockPopup() {
   var mainContent = document.querySelector('main');
-  mainContent.classList.add('blur-background');
-  
-  var popup = document.createElement('div');
-  popup.className = 'popup';
-  popup.innerHTML = '<h2>Looks like you\'re using AdBlock</h2>' +
-                   '<p>That\'s fine, who doesn\'t? But without funding from advertisements, we can\'t keep our content free.</p>' +
-                   '<p>Support your smaller creators.</p>';
-  document.body.appendChild(popup);
+  mainContent.classList.add('mainelement');
+
+  var contents = document.createElement('div');
+  contents.className = 'contents';
+  contents.innerHTML = '<h2>Looks like you\'re using AdBlock</h2>' +
+    '<p>That\'s fine, who doesn\'t? But without funding from advertisements, we can\'t keep our content free.</p>' +
+    '<p>Support your smaller creators.</p>';
+  document.body.appendChild(contents);
 }
 
 function disableHeader() {

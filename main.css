@@ -234,7 +234,7 @@ main {
 }
 
 /* Styling for the popup */
-.popup {
+.contents {
   display: block;
   position: fixed;
   top: 50%;
@@ -248,7 +248,7 @@ main {
   z-index: 5;
 }
 
-.blur-background {
+.mainelement {
   position: absolute;
   top: 0;
   left: 0;
