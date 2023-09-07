@@ -1,261 +1,262 @@
 .bottom-ad {
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  z-index: 1;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	z-index: 1;
 }
 
 .downloadbutton {
-  background-color: DodgerBlue;
-  border: none;
-  color: white;
-  padding: 12px 30px;
-  cursor: pointer;
-  font-size: 40px;
-  width: auto;
-  height: 200px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+	background-color: DodgerBlue;
+	border: none;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	font-size: 40px;
+	width: auto;
+	height: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .downloadbutton:hover {
-  background-color: RoyalBlue;
+	background-color: RoyalBlue;
 }
 
 .changelog {
-  width: 320px;
-  padding: 10px;
-  border: 5px solid gray;
-  margin: 0;
+	width: 320px;
+	padding: 10px;
+	border: 5px solid gray;
+	margin: 0;
 }
 
 body {
-  background-color: #191a1d;
-  color: #eee;
-  margin: 0;
-  font-family: Arial, sans-serif;
+	background-color: #191a1d;
+	color: #eee;
+	margin: 0;
+	font-family: Arial, sans-serif;
 }
 
 p {
-  font-size: 20px;
+	font-size: 20px;
 }
 
 h1 {
-  color: #FF8C00;
-  font-size: 40px;
+	color: #FF8C00;
+	font-size: 40px;
 }
 
 h2 {
-  color: #FFA500;
-  font-size: 35px;
+	color: #FFA500;
+	font-size: 35px;
 }
 
 h3 {
-  font-size: 30px;
+	font-size: 30px;
 }
 
 a {
-  outline: none;
-  text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
 
 a:visited {
-  outline: none;
-  text-decoration: none;
+	outline: none;
+	text-decoration: none;
 }
 
 hr {
-  border-color: #333;
-  border-style: dashed;
-  border-width: 1px;
-  margin-top: 20px;
-  margin-bottom: 20px;
+	border-color: #333;
+	border-style: dashed;
+	border-width: 1px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .header {
-  background-color: #444;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 10px;
-  z-index: 1;
+	background-color: #444;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 10px;
+	z-index: 1;
 }
 
 .name {
-  font-size: 28px;
-  font-family: header, Arial, sans-serif;
-  margin: 0;
-  text-align: center;
-  flex: 1;
+	font-size: 28px;
+	font-family: header, Arial, sans-serif;
+	margin: 0;
+	text-align: center;
+	flex: 1;
 }
 
 .logo {
-  height: 40px;
-  width: 40px;
+	height: 40px;
+	width: 40px;
 }
 
 .menu-btn {
-  font-size: 21px;
-  border: none;
-  background-color: transparent;
-  color: #fff;
-  cursor: pointer;
-  margin-right: 20px;
-  margin-left: 8px;
+	font-size: 21px;
+	border: none;
+	background-color: transparent;
+	color: #fff;
+	cursor: pointer;
+	margin-right: 20px;
+	margin-left: 8px;
 }
 
 .menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 40px;
-  background-color: #444;
-  color: #fff;
-  padding: 15px 15px;
-  z-index: 2;
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: 40px;
+	background-color: #444;
+	color: #fff;
+	padding: 15px 15px;
+	z-index: 2;
 }
 
 .menu.show {
-  display: block;
+	display: block;
 }
 
 .menu a {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 5px 5px;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 5px;
 }
 
 .menu a:hover {
-  background-color: #555;
+	background-color: #555;
 }
 
 main {
-  margin-top: 8vh;
-  padding: 20px;
+	margin-top: 8vh;
+	padding: 20px;
 }
 
 .post {
-  position: relative;
-  display: inline;
-  font-family: Arial;
+	position: relative;
+	display: inline;
+	font-family: Arial;
 }
 
 /* Bottom left text */
 .posttext {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: black;
-  color: white;
-  padding-left: 20px;
-  padding-right: 20px;
-  opacity: 70%;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	background-color: black;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+	opacity: 70%;
 }
 
 @media screen and (min-width: 800px) {
-  .post {
-    position: relative;
-    display: inline;
-    font-family: Arial;
-    width: 24%;
-  }
+	.post {
+		position: relative;
+		display: inline;
+		font-family: Arial;
+		width: 24%;
+	}
 
-  .post img {
-    width: 24%;
-    display: inline;
-    height: auto;
-  }
+	.post img {
+		width: 24%;
+		display: inline;
+		height: auto;
+	}
 
-  .post a {
-    width: 24%;
-    display: inline;
-  }
+	.post a {
+		width: 24%;
+		display: inline;
+	}
 
-  .images {
-    width: 49%;
-  }
+	.images {
+		width: 49%;
+	}
 
-  .verticalimages {
-    width: 19%;
-  }
+	.verticalimages {
+		width: 19%;
+	}
 
-  .text {
-    width: 50%
-  }
+	.text {
+		width: 50%
+	}
 }
 
 @media screen and (max-width: 800px) {
-  .post {
-    position: relative;
-    font-family: Arial;
-    width: 100%;
-    display: block;
-    text-align: center;
-  }
+	.post {
+		position: relative;
+		font-family: Arial;
+		width: 100%;
+		display: block;
+		text-align: center;
+	}
 
-  .post img {
-    width: 100%;
-    height: auto;
-  }
+	.post img {
+		width: 100%;
+		height: auto;
+	}
 
-  .post a {
-    width: 100%;
-  }
+	.post a {
+		width: 100%;
+	}
 
-  .images {
-    width: 95%;
-  }
+	.images {
+		width: 95%;
+	}
 
-  .verticalimages {
-    width: 95%;
-  }
+	.verticalimages {
+		width: 95%;
+	}
 
-  .text {
-    width: 95%
-  }
+	.text {
+		width: 95%
+	}
 
-  .bottom-ad {
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    z-index: 1;
-    width: 100%;
-  }
+	.bottom-ad {
+		position: fixed;
+		bottom: 0px;
+		right: 0px;
+		z-index: 1;
+		width: 100%;
+	}
 
-  footer {
-    padding-bottom: 15%;
-  }
+	footer {
+		padding-bottom: 15%;
+	}
 }
 
 /* Styling for the popup */
 .contents {
-  display: block;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: black;
-  padding: 20px;
-  border-radius: 30px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-  text-align: center;
-  z-index: 5;
+	display: block;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: black;
+	padding: 20px;
+	border-radius: 30px;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+	text-align: center;
+	z-index: 5;
 }
 
 .mainelement {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 4; /* Place it below the popup */
-  filter: blur(5px);
-  pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+	/* Place it below the popup */
+	filter: blur(5px);
+	pointer-events: none;
 }
