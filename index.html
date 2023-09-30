@@ -4,6 +4,7 @@
 <head>
 	<!-- Ad-Block Detection -->
 	<script src="/detect.js"></script>
+	<script src="/loading.js"></script>
 	<script async src="https://fundingchoicesmessages.google.com/i/pub-5850853284840895?ers=1"
 		nonce="DP0wl09xzInY-Eh0sKcmpg"></script>
 	<script
@@ -63,10 +64,12 @@
 		</div>
 	</div>
 	<main>
+		<div id="loading-spinner" class="hidden">
+			<div class="spinner"></div>
+		</div>
 		<script async
 			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5850853284840895"
 			crossorigin="anonymous"></script>
-		<!-- Top of page ad -->
 		<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5850853284840895"
 			data-ad-slot="4686643138" data-ad-format="auto" data-full-width-responsive="true"></ins>
 		<script>
@@ -140,12 +143,6 @@
 				</div>
 			</div>
 		</a>
-		<!-- Add this after your existing content -->
-<div id="loading-spinner" class="hidden">
-    <div class="spinner"></div>
-    <p>Loading Ads...</p>
-</div>
-
 	</main>
 	<footer>
 		<hr>
@@ -158,22 +155,6 @@
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 	</div>
-	<script>document.addEventListener("DOMContentLoaded", function () {
-		// Simulate ad loading (replace this with your actual ad-loading logic)
-		simulateAdLoading();
-	});
-	
-	function simulateAdLoading() {
-		// Show loading spinner
-		document.getElementById("loading-spinner").classList.remove("hidden");
-	
-		// Simulate ad loading time (replace this with your actual ad-loading time)
-		setTimeout(function () {
-			// Hide loading spinner when ads are loaded
-			document.getElementById("loading-spinner").classList.add("hidden");
-		}, 2000); // Replace 2000 with the actual loading time of your ads
-	}
-	</script>
 </body>
 
 </html>

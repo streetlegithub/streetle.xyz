@@ -278,10 +278,11 @@ main {
 	pointer-events: none;
 }
 
-/* Add this to your existing CSS or main.css */
 #loading-spinner {
-    text-align: center;
-    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .spinner {
