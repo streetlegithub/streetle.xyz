@@ -278,11 +278,17 @@ main {
 	pointer-events: none;
 }
 
+/* Add this to your existing CSS or main.css */
+#ad-container {
+    position: relative;
+}
+
 #loading-spinner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensure the spinner is above the ad */
 }
 
 .spinner {
