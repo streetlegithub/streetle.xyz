@@ -1,0 +1,21 @@
+{
+  "sitemap.xml": {
+    "Protocol": "https",
+    "DomainName": "streetle.xyz",
+    "Root": "./",
+    "IncludeExt": [
+      ".html"
+    ],
+    "Exclude": [],
+    "TagsToInclude": [
+      "lastmod"
+    ],
+    "DefaultChangeFrequency": "weekly",
+    "TabCharacters": "\t",
+    "bIncludeWWW": false,
+    "bRemoveFileExtentions": false,
+    "bUseTrailingSlash": true,
+    "bAutomaticallyUpdateSitemap": true,
+    "bMinimized": false
+  }
+}
