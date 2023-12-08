@@ -23,6 +23,7 @@
             background-image: url('/images/index/addons/lowerswords.webp');
         }
     </style>
+    <script>function toggleMobileMenu() { var navLinks = document.querySelector('.nav-links'); navLinks.style.display = (navLinks.style.display === 'flex' || navLinks.style.display === '') ? 'none' : 'flex'; }</script>
 </head>
 
 <body>
@@ -33,12 +34,13 @@
                 <h1 class="name">streetle</h1>
             </a>
         </div>
-        <nav class="links">
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        <div class="nav-links">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
             <a href="/discord">Discord</a>
-        </nav>
+        </div>
     </header>
     <section class="addon-title">
         <h2>Lower Swords</h2>
