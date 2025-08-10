@@ -1,63 +1,58 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Under Construction</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #303030;
-      color: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    .banner {
-      background: linear-gradient(135deg, #ff6a00, #ee0979);
-      color: #fff;
-      padding: 2rem 3rem;
-      border-radius: 1rem;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      max-width: 90%;
-      animation: popIn 0.8s ease;
-    }
-
-    .banner h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .banner p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    @keyframes popIn {
-      0% {
-        transform: scale(0.9);
-        opacity: 0;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>streetle — links & landing</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/spotify-player.css">
 </head>
 <body>
-  <div class="banner">
-    <h1>🚧 Under Construction 🚧</h1>
-    <p>Stay tuned!</p>
-  </div>
+  <main>
+    <div class="content-bg">
+      <section class="hero">
+        <h1 class="hero-title">streetle</h1>
+        <p class="hero-desc">im literally just a guy<br>this website is *not* finished</p>
+      </section>
+
+      <section class="socials">
+        <a class="social-link" href="https://github.com/streetlegithub" target="_blank" rel="noopener">
+          <img src="https://cdn.simpleicons.org/github/fff/23233a" alt="GitHub" />GitHub
+        </a>
+        <a class="social-link" href="https://youtube.com/@streetle" target="_blank" rel="noopener">
+          <img src="https://cdn.simpleicons.org/youtube/fff/23233a" alt="YouTube" />YouTube
+        </a>
+        <a class="social-link" href="https://twitch.tv/streetlelive" target="_blank" rel="noopener">
+          <img src="https://cdn.simpleicons.org/twitch/fff/23233a" alt="Twitch" />Twitch
+        </a>
+        <a class="social-link" href="https://x.com/streetletwt" target="_blank" rel="noopener">
+          <img src="https://cdn.simpleicons.org/x/fff/23233a" alt="X (Twitter)" />X
+        </a>
+        <a class="social-link" href="https://discord.com/users/869901410953740349" target="_blank" rel="noopener">
+          <img src="https://cdn.simpleicons.org/discord/fff/23233a" alt="Discord" />Discord
+        </a>
+        <a class="social-link" href="https://open.spotify.com/user/streetle" target="_blank" rel="noopener">
+          <img src="https://cdn.simpleicons.org/spotify/fff/23233a" alt="Spotify" />Spotify
+        </a>
+      </section>
+    </div>
+    <section class="spotify-section floating-player">
+  <div class="now-playing-label">What I’m currently listening to</div>
+      <div id="player">
+        <img id="album-art" src="" alt="Album art" />
+        <div id="info">
+          <div id="track-name">Loading...</div>
+          <div id="artist-name"></div>
+          <a id="context-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+        </div>
+      </div>
+      <div id="status" style="display:none;">Not playing anything right now.</div>
+    </section>
+  </main>
+  <script src="js/bg-abstract.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/spotify-player.js"></script>
+  <script src="js/effects.js"></script>
 </body>
 </html>

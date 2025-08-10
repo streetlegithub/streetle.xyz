@@ -1,0 +1,265 @@
+.floating-player {
+  position: fixed !important;
+  right: 2vw;
+  bottom: 2vw;
+  z-index: 10;
+  width: 350px;
+  max-width: 90vw;
+  background: none;
+  box-shadow: none;
+  pointer-events: none;
+  display: block;
+}
+.floating-player #player, .floating-player #status {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+.floating-player #player {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+/* Content background for text and links */
+.content-bg {
+  background: rgba(30, 20, 40, 0.65);
+  box-shadow: 0 8px 48px 0 #e100ff22, 0 1.5px 8px #6d28d944;
+  border-radius: 2.2rem;
+  padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  margin: 5vh auto 0 auto;
+  max-width: 420px;
+  width: 95vw;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .content-bg {
+    padding: 2.2rem 0.7rem 1.5rem 0.7rem;
+    max-width: 98vw;
+  }
+}
+
+/* Floating now playing widget bottom right */
+.floating-player {
+  position: fixed !important;
+  right: 2vw;
+  bottom: 2vw;
+  z-index: 10;
+  width: 350px;
+  max-width: 90vw;
+  background: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+.floating-player #player, .floating-player #status {
+  pointer-events: auto;
+}
+@media (max-width: 600px) {
+  .floating-player {
+    width: 98vw;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    border-radius: 0;
+  }
+}
+#neon-cursor.hover {
+  border-color: #fff176;
+  box-shadow: 0 0 32px 12px #fff176cc, 0 0 64px 24px #e100ff99;
+  background: rgba(255,241,118,0.18);
+  transform: scale(1.2);
+}
+/* Modern, clean, Figma-inspired landing page for streetle */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;700&display=swap');
+
+body {
+  /* background removed for animated canvas */
+  color: #fff;
+  font-family: 'Urbanist', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  cursor: none !important;
+}
+
+*, *:hover, *:active, *:focus {
+  cursor: none !important;
+}
+
+#bg-abstract {
+  position: fixed;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+main, .hero, .socials, .spotify-section, #player, #status, #neon-cursor {
+  position: relative;
+  z-index: 2;
+}
+/* Neon cyberpunk glow accents */
+.hero-title {
+  /* ...existing code... */
+  text-shadow: 0 2px 16px #e100ff99, 0 1px 2px #6d28d9cc;
+}
+
+.social-link {
+  /* ...existing code... */
+  box-shadow: 0 2px 12px #e100ff33, 0 0.5px 2px #6d28d944;
+  border: 1.5px solid #a259f7;
+}
+.social-link:hover {
+  /* ...existing code... */
+  box-shadow: 0 6px 32px #e100ff55, 0 2px 8px #6d28d988;
+  border-color: #e100ff;
+}
+
+.hero-avatar {
+  /* ...existing code... */
+  box-shadow: 0 8px 32px #e100ff33, 0 2px 8px #6d28d988;
+  border: 3px solid #a259f7;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+
+/* Custom neon cursor */
+#neon-cursor {
+  position: fixed;
+  left: 0; top: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  border: 2.5px solid #e100ff;
+  box-shadow: 0 0 16px 4px #e100ff88, 0 0 32px 8px #a259f755;
+  background: rgba(225,0,255,0.08);
+  transition: transform 0.15s cubic-bezier(.77,0,.18,1), box-shadow 0.2s;
+  mix-blend-mode: lighten;
+}
+#neon-cursor.active {
+  transform: scale(1.5);
+  box-shadow: 0 0 32px 12px #e100ffcc, 0 0 64px 24px #a259f7aa;
+}
+
+/* Custom scrollbar for cyberpunk */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #e100ff 0%, #a259f7 100%);
+  border-radius: 8px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInDown 1s cubic-bezier(.77,0,.18,1) 0.2s both;
+}
+
+.hero-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  border: 4px solid #23233a;
+  margin-bottom: 1.2rem;
+  background: #23233a;
+  animation: popIn 0.8s cubic-bezier(.77,0,.18,1) 0.1s both;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #e100ff 0%, #a259f7 60%, #6d28d9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin-bottom: 1.5rem;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 1s cubic-bezier(.77,0,.18,1) 0.4s both;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: rgba(80, 0, 120, 0.7);
+  border-radius: 1.1rem;
+  padding: 0.7rem 1.4rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(160,0,255,0.10);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.social-link:hover {
+  background: linear-gradient(90deg, #e100ff 0%, #a259f7 100%);
+  color: #fff;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(160,0,255,0.18);
+}
+.social-link img {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+  transition: border-radius 0.2s, box-shadow 0.2s;
+}
+
+.spotify-section {
+  margin-top: 2.5rem;
+  animation: fadeIn 1.2s cubic-bezier(.77,0,.18,1) 0.7s both;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  80% { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23233a;
+}
+::-webkit-scrollbar-thumb {
+  background: #e100ff;
+  border-radius: 8px;
+}
