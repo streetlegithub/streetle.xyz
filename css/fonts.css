@@ -3,9 +3,11 @@
 @font-face {
   font-family: 'SatoshiVariable';
   src: url('../fonts/Satoshi-Variable.woff2') format('woff2');
-  font-weight: 300 800; /* range for variable font */
+  font-weight: 300 800;
+  /* range for variable font */
   font-display: swap;
 }
+
 @font-face {
   font-family: 'JetBrainsMono';
   src: url('../fonts/JetBrainsMono-Regular.woff2') format('woff2');

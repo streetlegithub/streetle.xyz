@@ -168,15 +168,15 @@ function initSteamPlaying() {
   function reposition() {
     const music = document.getElementById('nowPlaying');
     if (!music || music.classList.contains('now-playing--hidden')) {
-    el.style.bottom = 'clamp(1.2rem,3vh,2rem)';
+      el.style.bottom = 'clamp(1.2rem,3vh,2rem)';
       return;
     }
     // Compute stacked offset: base gap + music height + gap
     const rect = music.getBoundingClientRect();
     const height = rect.height || 90;
     const gap = 14; // px gap between widgets
-  const safe = 'env(safe-area-inset-bottom, 0px)';
-  el.style.bottom = `calc(max(clamp(1.2rem,3vh,2rem), ${safe}) + ${height + gap}px)`;
+    const safe = 'env(safe-area-inset-bottom, 0px)';
+    el.style.bottom = `calc(max(clamp(1.2rem,3vh,2rem), ${safe}) + ${height + gap}px)`;
   }
 
   async function fetchSteam() {
@@ -193,14 +193,14 @@ function initSteamPlaying() {
   function updateSteam(data) {
     if (!data || !data.game || !data.game.id) {
       el.classList.add('steam-playing--hidden');
-  reposition();
+      reposition();
       return;
     }
     const g = data.game;
     title.textContent = g.name || 'Unknown Game';
     if (g.icon) art.src = g.icon; else art.removeAttribute('src');
     open.href = g.id ? `https://store.steampowered.com/app/${g.id}` : '#';
-  el.classList.remove('steam-playing--hidden');
+    el.classList.remove('steam-playing--hidden');
     // Background blur (use header image already provided in g.icon)
     if (g.icon) {
       const bgUrl = g.icon;
@@ -211,7 +211,7 @@ function initSteamPlaying() {
         requestAnimationFrame(() => el.classList.add('sp-bg-ready'));
       }
     } else {
-      el.style.setProperty('--sp-bg','none');
+      el.style.setProperty('--sp-bg', 'none');
       el.classList.remove('sp-bg-ready');
     }
     reposition();
@@ -229,7 +229,7 @@ function initSteamPlaying() {
         const ro = new ResizeObserver(() => reposition());
         ro.observe(music);
       }
-      window.addEventListener('resize', reposition, { passive:true });
+      window.addEventListener('resize', reposition, { passive: true });
       observerAttached = true;
     }
   }
@@ -255,22 +255,22 @@ function initCustomCursor() {
   const update = () => {
     // Lerp ring towards cursor
     const dt = Math.min(1, (performance.now() - lastMoveTime) / 16.67);
-  // Adaptive tiny smoothing: closer when fast, smoother when slow to reduce choppiness
-  const dx = x - rx;
-  const dy = y - ry;
-  const dist = Math.hypot(dx, dy);
-  // Determine follow factor based on distance (speed proxy)
-  // Very small moves: lower factor => gentle ease; large jumps: higher factor => responsiveness
-  let follow;
-  if (dist > 140) follow = 0.70;       // big jump
-  else if (dist > 90) follow = 0.62;   // fast move
-  else if (dist > 50) follow = 0.52;   // moderate
-  else if (dist > 24) follow = 0.42;   // slow drag
-  else follow = 0.32;                  // micro adjustments
-  rx += dx * follow * dt;
-  ry += dy * follow * dt;
-  ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-  if (dot) dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+    // Adaptive tiny smoothing: closer when fast, smoother when slow to reduce choppiness
+    const dx = x - rx;
+    const dy = y - ry;
+    const dist = Math.hypot(dx, dy);
+    // Determine follow factor based on distance (speed proxy)
+    // Very small moves: lower factor => gentle ease; large jumps: higher factor => responsiveness
+    let follow;
+    if (dist > 140) follow = 0.70;       // big jump
+    else if (dist > 90) follow = 0.62;   // fast move
+    else if (dist > 50) follow = 0.52;   // moderate
+    else if (dist > 24) follow = 0.42;   // slow drag
+    else follow = 0.32;                  // micro adjustments
+    rx += dx * follow * dt;
+    ry += dy * follow * dt;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    if (dot) dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
     requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
@@ -360,5 +360,5 @@ function initMicroBio() {
       const line = list[Math.floor(Math.random() * list.length)];
       el.textContent = line;
     })
-    .catch(()=>{});
+    .catch(() => { });
 }
