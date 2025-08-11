@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="S logo">
+  <defs>
+    <!-- Gradient matching purple → pink sweep -->
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="55%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <!-- Subtle diagonal line pattern (very low contrast) -->
+    <pattern id="diags" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="skewX(-20)">
+      <rect width="12" height="12" fill="#0f1115"/>
+      <path d="M0 12 L12 0 M-3 9 L3 15 M9 -3 L15 3" stroke="#1a1e24" stroke-width="2" stroke-linecap="square" opacity="0.18"/>
+    </pattern>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="22" stdDeviation="28" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+  </defs>
+
+  <!-- Background with subtle texture -->
+  <rect width="512" height="512" fill="url(#diags)"/>
+  <rect width="512" height="512" fill="#0f1115" opacity="0.55"/>
+
+  <!-- The letter S as a path (independent of fonts) -->
+  <path filter="url(#softShadow)" fill="url(#grad)" d="M361.4 349.8c-13.4 33.3-47.6 53.8-95.6 53.8-62.2 0-103.5-32.8-103.5-81.2 0-37 21.8-61.6 69.9-73.9l54.6-14.2c24.7-6.2 34.1-13.6 34.1-26.9 0-19.4-20.2-31.2-54.3-31.2-20.4 0-36.7 3.6-48 10.8-10.3 6.5-15.9 15-18.7 28.4h-53.7c2.8-26.5 10.6-43.6 25.4-58.1 20.4-19.8 52.5-30 93.6-30 65.5 0 107.1 30 107.1 76.7 0 35.1-21.2 57.5-67.2 69.6l-58.4 15.6c-26.1 7-36.2 14.7-36.2 29.8 0 19.9 21 32.9 55.7 32.9 33.8 0 52.7-11.2 61.2-33.4h52.9Z"/>
+</svg>
