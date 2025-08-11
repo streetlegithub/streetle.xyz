@@ -1,58 +1,119 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>streetle — links & landing</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/spotify-player.css">
+  <title>streetle</title>
+  <meta name="theme-color" content="#0f1115" />
+  <meta name="color-scheme" content="dark" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="streetle" />
+  <meta property="og:description" content="streetle • links & live activity" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://streetle.xyz/" />
+  <meta property="og:image" content="https://streetle.xyz/og-image.svg" />
+  <meta property="og:image:alt" content="streetle gradient wordmark" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="streetle" />
+  <meta name="twitter:description" content="streetle • links & live activity" />
+  <meta name="twitter:image" content="https://streetle.xyz/og-image.svg" />
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" />
+  <link rel="canonical" href="https://streetle.me/" />
+  <link rel="preload" href="fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/social.css" />
+  <link rel="stylesheet" href="css/icons.css" />
+  <link rel="stylesheet" href="css/cursor.css" />
+  <link rel="stylesheet" href="css/steam.css" />
 </head>
-<body>
-  <main>
-    <div class="content-bg">
-      <section class="hero">
-        <h1 class="hero-title">streetle</h1>
-        <p class="hero-desc">im literally just a guy<br>this website is *not* finished</p>
-      </section>
 
-      <section class="socials">
-        <a class="social-link" href="https://github.com/streetlegithub" target="_blank" rel="noopener">
-          <img src="https://cdn.simpleicons.org/github/fff/23233a" alt="GitHub" />GitHub
-        </a>
-        <a class="social-link" href="https://youtube.com/@streetle" target="_blank" rel="noopener">
-          <img src="https://cdn.simpleicons.org/youtube/fff/23233a" alt="YouTube" />YouTube
-        </a>
-        <a class="social-link" href="https://twitch.tv/streetlelive" target="_blank" rel="noopener">
-          <img src="https://cdn.simpleicons.org/twitch/fff/23233a" alt="Twitch" />Twitch
-        </a>
-        <a class="social-link" href="https://x.com/streetletwt" target="_blank" rel="noopener">
-          <img src="https://cdn.simpleicons.org/x/fff/23233a" alt="X (Twitter)" />X
-        </a>
-        <a class="social-link" href="https://discord.com/users/869901410953740349" target="_blank" rel="noopener">
-          <img src="https://cdn.simpleicons.org/discord/fff/23233a" alt="Discord" />Discord
-        </a>
-        <a class="social-link" href="https://open.spotify.com/user/streetle" target="_blank" rel="noopener">
-          <img src="https://cdn.simpleicons.org/spotify/fff/23233a" alt="Spotify" />Spotify
-        </a>
-      </section>
-    </div>
-    <section class="spotify-section floating-player">
-  <div class="now-playing-label">What I’m currently listening to</div>
-      <div id="player">
-        <img id="album-art" src="" alt="Album art" />
-        <div id="info">
-          <div id="track-name">Loading...</div>
-          <div id="artist-name"></div>
-          <a id="context-link" href="#" target="_blank" rel="noopener noreferrer"></a>
+<body>
+  <h1 class="brand-hero">streetle</h1>
+  <main id="content" class="site-main" role="main">
+    <section class="section-social" aria-label="Social Links">
+      <ul class="social-links">
+        <li><a class="brand-github" href="https://github.com/streetlegithub" target="_blank" rel="noopener">github(<span
+              class="icon" aria-label="github"><img src="https://cdn.simpleicons.org/github/ffffff" alt=""
+                loading="lazy" decoding="async" /></span>)</a></li>
+        <li><a class="brand-discord" href="https://discord.com/users/869901410953740349" target="_blank"
+            rel="noopener">discord(<span class="icon" aria-label="discord"><img
+                src="https://cdn.simpleicons.org/discord/ffffff" alt="" loading="lazy" decoding="async" /></span>)</a>
+        </li>
+        <li><a class="brand-youtube" href="https://www.youtube.com/@streetle" target="_blank"
+            rel="noopener">youtube(<span class="icon" aria-label="youtube"><img
+                src="https://cdn.simpleicons.org/youtube/ffffff" alt="" loading="lazy" decoding="async" /></span>)</a>
+        </li>
+        <li><a class="brand-twitch" href="https://twitch.tv/streetlelive" target="_blank" rel="noopener">twitch(<span
+              class="icon" aria-label="twitch"><img src="https://cdn.simpleicons.org/twitch/ffffff" alt=""
+                loading="lazy" decoding="async" /></span>)</a></li>
+        <li><a class="brand-spotify" href="https://open.spotify.com/user/streetle" target="_blank"
+            rel="noopener">spotify(<span class="icon" aria-label="spotify"><img
+                src="https://cdn.simpleicons.org/spotify/ffffff" alt="" loading="lazy" decoding="async" /></span>)</a>
+        </li>
+        <li><a class="brand-x" href="https://x.com/streetletwt" target="_blank" rel="noopener">X(<span class="icon"
+              aria-label="x"><img src="https://cdn.simpleicons.org/x/ffffff" alt="" loading="lazy"
+                decoding="async" /></span>)</a></li>
+        <li><a class="brand-steam" href="https://steamcommunity.com/id/streetlevr" target="_blank"
+            rel="noopener">steam(<span class="icon" aria-label="steam"><img
+                src="https://cdn.simpleicons.org/steam/ffffff" alt="" loading="lazy" decoding="async" /></span>)</a>
+        </li>
+        <li><a class="brand-reddit" href="https://www.reddit.com/user/streetleleon" target="_blank"
+            rel="noopener">reddit(<span class="icon" aria-label="reddit"><img
+                src="https://cdn.simpleicons.org/reddit/ffffff" alt="" loading="lazy" decoding="async" /></span>)</a>
+        </li>
+        <li><a class="brand-roblox" href="https://www.roblox.com/users/profile?username=streetleleon" target="_blank"
+            rel="noopener">roblox(<span class="icon" aria-label="roblox"><img
+                src="https://cdn.simpleicons.org/roblox/ffffff" alt="" loading="lazy" decoding="async" /></span>)</a>
+        </li>
+        <li><a class="brand-xbox" href="https://www.xbox.com/en-GB/play/user/streetle" target="_blank"
+            rel="noopener">xbox(<span class="icon" aria-label="xbox"><img
+                src="https://icons.iconarchive.com/icons/simpleicons-team/simple/128/xbox-icon.png" alt=""
+                loading="lazy" decoding="async" style="filter: brightness(0) invert(1);" /></span>)</a></li>
+      </ul>
+    </section>
+    <div id="nowPlaying" class="now-playing now-playing--hidden" aria-live="polite"
+      aria-label="Currently playing on Spotify">
+      <div class="now-playing__cover-wrapper">
+        <img class="now-playing__cover" alt="Album cover" src="" loading="lazy" decoding="async" />
+      </div>
+      <div class="now-playing__meta">
+        <span class="now-playing__label">Currently Listening</span>
+        <span class="now-playing__title" id="npTitle">Not playing</span>
+        <span class="now-playing__artist" id="npArtist"></span>
+        <div class="now-playing__progress" aria-hidden="true">
+          <div class="now-playing__progress-bar" id="npBar"></div>
+        </div>
+        <div class="now-playing__actions">
+          <button class="now-playing__open" id="npOpen" type="button">Open</button>
         </div>
       </div>
-      <div id="status" style="display:none;">Not playing anything right now.</div>
-    </section>
+    </div>
+    <div id="steamPlaying" class="steam-playing steam-playing--hidden" aria-live="polite"
+      aria-label="Currently playing on Steam">
+      <div class="steam-playing__art-wrapper">
+        <img class="steam-playing__art" alt="Game art" src="" loading="lazy" decoding="async" />
+      </div>
+      <div class="steam-playing__meta">
+        <span class="steam-playing__label">Currently Playing</span>
+        <span class="steam-playing__title" id="spTitle">Not in game</span>
+        <div class="steam-playing__actions">
+          <a class="steam-playing__open" id="spOpen" target="_blank" rel="noopener" href="#"
+            aria-label="Open game page">Open</a>
+        </div>
+      </div>
+    </div>
   </main>
-  <script src="js/bg-abstract.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/spotify-player.js"></script>
-  <script src="js/effects.js"></script>
+  <script src="js/main.js" defer></script>
+  <div class="cursor-layer" aria-hidden="true">
+    <div class="cursor-ring"></div>
+    <div class="cursor-dot"></div>
+  </div>
 </body>
+
 </html>

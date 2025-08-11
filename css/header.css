@@ -1,0 +1,44 @@
+/* header.css repurposed: large top-left brand hero */
+.brand-hero {
+  position: fixed;
+  top: clamp(1.2rem, 3vh, 2.4rem);
+  left: clamp(1.4rem, 3vw, 2.8rem);
+  margin:0;
+  font-family: var(--font-sans);
+  font-weight: 650;
+  line-height: .9;
+  letter-spacing: -2px;
+  font-size: clamp(3.5rem, 9.2vw, 8rem);
+  background: var(--color-accent);
+  -webkit-background-clip: text; background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,.55));
+  white-space: nowrap;
+  pointer-events: none; /* purely decorative label */
+  user-select: none;
+  --slide-distance: 140px;
+  transform: translateX(calc(-1 * var(--slide-distance)));
+  opacity:0;
+  animation: heroSlideIn 1.15s cubic-bezier(.55,.1,.25,1.02) .15s forwards;
+}
+@media (max-width: 520px) {
+  .brand-hero {
+    font-size: clamp(2.6rem, 16vw, 4.2rem);
+    letter-spacing: -1px;
+    left: 1rem;
+    top: 1rem;
+    white-space: normal; /* allow wrap if needed */
+    max-width: 90%;
+    --slide-distance: 90px;
+  }
+}
+@keyframes heroSlideIn {
+  0% { opacity:0; transform: translateX(calc(-1 * var(--slide-distance))) scale(.95); filter:blur(6px) saturate(140%); }
+  55% { transform: translateX(12px) scale(1.02); }
+  100% { opacity:1; transform: translateX(0) scale(1); filter:blur(0) saturate(100%); }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .brand-hero { animation: none; opacity:1; transform:none; filter:none; }
+}

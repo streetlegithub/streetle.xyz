@@ -1,0 +1,14 @@
+/* icons.css: using cdn.simpleicons.org images */
+.icon { width:22px; height:22px; display:inline-flex; vertical-align:middle; }
+.icon img { width:100%; height:100%; display:block; object-fit:contain; image-rendering:auto; }
+
+/* Base link hover lift */
+.social-links a .icon { transition: transform .5s var(--ease-spring), filter .6s var(--ease-spring); }
+.social-links a:hover .icon, .social-links a:focus-visible .icon { transform: translateY(-2px); filter: drop-shadow(0 4px 10px rgba(0,0,0,.45)); }
+
+/* Optional: if you want colored icons instead of white, remove the /ffffff color segment from the img src URLs */
+
+@media (prefers-reduced-motion: reduce) {
+	.social-links a .icon { transition:none; }
+	.social-links a:hover .icon, .social-links a:focus-visible .icon { transform:none; filter:none; }
+}
