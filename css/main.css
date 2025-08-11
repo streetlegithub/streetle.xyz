@@ -33,6 +33,9 @@ body {
   flex-direction: column;
 }
 
+/* Disable text selection globally */
+body, body * { -webkit-user-select: none; user-select: none; }
+
 body::before { /* subtle grain overlay */
   content: '';
   position: fixed; inset: 0; pointer-events: none; z-index: -1;
@@ -57,3 +60,56 @@ header.site-header { position:relative; z-index:10; }
 main { flex:1; display:flex; flex-direction:column; }
 
 :focus-visible { outline:2px solid #6366f1; outline-offset:3px; border-radius:4px; }
+
+/* Micro bio bottom-left */
+.micro-bio {
+  position: fixed;
+  left: clamp(1rem, 3vw, 2.2rem);
+  bottom: clamp(1rem, 3vh, 2rem);
+  max-width: 300px;
+  font-family: var(--font-mono);
+  font-size: .65rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-text-dim);
+  opacity: 0;
+  transform: translateY(6px);
+  animation: microBioIn .8s var(--ease-spring) .4s forwards;
+  pointer-events: none;
+  user-select: none;
+}
+@keyframes microBioIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+@media (max-width:520px) { .micro-bio { font-size:.6rem; left:1rem; bottom: max(1rem, env(safe-area-inset-bottom)); } }
+@media (prefers-reduced-motion: reduce) { .micro-bio { animation:none; opacity:1; transform:none; } }
+
+/* UK time indicator */
+.local-time {
+  position: fixed;
+  top: clamp(.8rem, 2vh, 1.2rem);
+  right: clamp(1rem, 2.4vw, 2rem);
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: rgba(31,36,44,.72);
+  border: 1px solid var(--color-border);
+  padding: .45rem .65rem .4rem;
+  border-radius: 8px;
+  color: var(--color-text-dim);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  line-height: 1.1;
+  white-space: nowrap;
+  animation: fadeSlideIn .8s var(--ease-spring) .25s both;
+  pointer-events: none; /* purely informational */
+}
+@media (max-width: 520px) {
+  .local-time { font-size:.6rem; letter-spacing:.15em; right: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .local-time { animation:none; }
+}

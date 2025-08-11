@@ -5,6 +5,9 @@ window.addEventListener('DOMContentLoaded', () => {
   initNowPlaying();
   initCustomCursor();
   initSteamPlaying();
+  initUkTime();
+  initCopyDiscord();
+  initMicroBio();
 });
 
 function initNowPlaying() {
@@ -305,4 +308,57 @@ function initCustomCursor() {
     clearTimeout(scrollTimer);
     scrollTimer = setTimeout(show, 180);
   }, { passive: true });
+}
+
+function initCopyDiscord() {
+  const btn = document.getElementById('copyDiscord');
+  if (!btn || !navigator.clipboard) return;
+  const feedback = btn.querySelector('.copy-discord__feedback');
+  const value = btn.getAttribute('data-copy') || 'streetle';
+  let timer;
+  btn.addEventListener('click', () => {
+    navigator.clipboard.writeText(value).then(() => {
+      btn.classList.add('copied');
+      if (feedback) feedback.textContent = 'Copied Discord username';
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        btn.classList.remove('copied');
+        if (feedback) feedback.textContent = '';
+      }, 1800);
+    });
+  });
+}
+
+function initUkTime() {
+  const el = document.getElementById('ukTime');
+  if (!el) return;
+  // Use Europe/London to reflect BST/GMT automatically
+  const tz = 'Europe/London';
+  const fmt = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: tz });
+  let last = '';
+  function tick() {
+    const now = fmt.format(new Date());
+    if (now !== last) {
+      el.textContent = `It is currently ${now} for me`;
+      last = now;
+    }
+    // Align next update to next minute boundary for precision
+    const ms = Date.now();
+    const delay = 60000 - (ms % 60000) + 50; // small buffer
+    setTimeout(tick, delay);
+  }
+  tick();
+}
+
+function initMicroBio() {
+  const el = document.getElementById('microBio');
+  if (!el) return;
+  fetch('quotes.json', { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : [])
+    .then(list => {
+      if (!Array.isArray(list) || list.length === 0) return;
+      const line = list[Math.floor(Math.random() * list.length)];
+      el.textContent = line;
+    })
+    .catch(()=>{});
 }
