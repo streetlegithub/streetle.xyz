@@ -9,9 +9,9 @@
 
 @media (max-width: 520px) {
   .section-social {
-  margin-top: clamp(7rem, 26vh, 10rem);
-  padding-left: 1rem;
-  padding-bottom: calc(7rem + var(--widget-reserve, 0px));
+    margin-top: clamp(7rem, 26vh, 10rem);
+    padding-left: 1rem;
+    padding-bottom: calc(7rem + var(--widget-reserve, 0px));
     /* space for widgets */
   }
 

@@ -67,7 +67,7 @@ function updateWidgetReserve() {
     if (sp && !sp.classList.contains('steam-playing--hidden')) overlays.push(sp);
     if (mb) overlays.push(mb);
     if (overlays.length === 0) {
-  document.documentElement.style.setProperty('--widget-reserve', '0px');
+      document.documentElement.style.setProperty('--widget-reserve', '0px');
       return;
     }
     let minTop = Number.POSITIVE_INFINITY;
@@ -77,7 +77,7 @@ function updateWidgetReserve() {
       if (rect.top < minTop) minTop = rect.top;
     });
     if (!isFinite(minTop)) {
-  document.documentElement.style.setProperty('--widget-reserve', '0px');
+      document.documentElement.style.setProperty('--widget-reserve', '0px');
       return;
     }
     const reserve = Math.max(0, Math.round(window.innerHeight - minTop + 12));
@@ -135,14 +135,14 @@ function initNowPlaying() {
     } catch (err) {
       // Hide widget on error silently after first failure
       el.classList.add('now-playing--hidden');
-  queueReserveUpdate();
+      queueReserveUpdate();
     }
   };
 
   function updateWidget(data) {
     if (!data || !data.item || data.currently_playing_type !== 'track') {
       el.classList.add('now-playing--hidden');
-  queueReserveUpdate();
+      queueReserveUpdate();
       return;
     }
     const track = data.item;
@@ -239,7 +239,7 @@ function initNowPlaying() {
 
   // Observe size changes to update reserved space
   if (window.ResizeObserver) {
-  const ro = new ResizeObserver(() => queueReserveUpdate());
+    const ro = new ResizeObserver(() => queueReserveUpdate());
     ro.observe(el);
   }
 }
@@ -283,7 +283,7 @@ function initSteamPlaying() {
     if (!data || !data.game || !data.game.id) {
       el.classList.add('steam-playing--hidden');
       reposition();
-  queueReserveUpdate();
+      queueReserveUpdate();
       return;
     }
     const g = data.game;
@@ -304,8 +304,8 @@ function initSteamPlaying() {
       el.style.setProperty('--sp-bg', 'none');
       el.classList.remove('sp-bg-ready');
     }
-  reposition();
-  queueReserveUpdate();
+    reposition();
+    queueReserveUpdate();
     if (g.id !== lastGameId) {
       // restart subtle entrance effect for new game (optional: tiny reflow)
       el.style.animation = 'none';

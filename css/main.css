@@ -153,7 +153,7 @@ main {
   border: 1px solid var(--color-border);
   border-radius: 10px;
   padding: .6rem .7rem;
-  box-shadow: var(--shadow-sm), 0 8px 20px -8px rgba(0,0,0,.7);
+  box-shadow: var(--shadow-sm), 0 8px 20px -8px rgba(0, 0, 0, .7);
   backdrop-filter: blur(10px) saturate(140%);
   -webkit-backdrop-filter: blur(10px) saturate(140%);
   display: inline-flex;
@@ -172,7 +172,7 @@ main {
   right: 10%;
   bottom: -8px;
   height: 10px;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,.6), rgba(0,0,0,0));
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, .6), rgba(0, 0, 0, 0));
   filter: blur(4px);
   z-index: -1;
 }
@@ -225,15 +225,24 @@ main {
     opacity: 1;
     transform: none;
   }
+
   .micro-bio__inner {
     animation: none;
   }
 }
 
 @keyframes microFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* UK time indicator */
