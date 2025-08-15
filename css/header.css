@@ -143,10 +143,9 @@
 
 .site-menu {
   position: fixed;
-  top: auto;
-  /* set dynamically */
-  right: auto;
-  /* set dynamically */
+  /* sensible defaults if JS doesn't position it */
+  top: clamp(.8rem, 2vh, 1.2rem);
+  right: clamp(1rem, 2.4vw, 2rem);
   min-width: 180px;
   background: linear-gradient(135deg, rgba(34, 39, 47, .78), rgba(18, 21, 25, .78));
   border: 1px solid var(--color-border);
@@ -159,6 +158,7 @@
   pointer-events: none;
   transform: translateY(-6px);
   transition: opacity var(--transition-medium), transform var(--transition-medium);
+  z-index: 60; /* ensure it's above other fixed UI */
 }
 
 .site-menu.open {
@@ -180,6 +180,7 @@
   font-family: var(--font-mono);
   font-size: .8rem;
   letter-spacing: .08em;
+  width: 100%;
 }
 
 .site-menu__list a:hover,
