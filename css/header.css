@@ -100,3 +100,183 @@
 @media (prefers-reduced-motion: reduce) {
   .mobile-note { animation: none; opacity: 1; transform: none; }
 }
+
+/* Hamburger menu button (top-right under local time) */
+.menu-toggle {
+  position: fixed;
+  top: clamp(.8rem, 2vh, 1.2rem);
+  right: clamp(1rem, 2.4vw, 2rem);
+  transform: translateY(40px);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-dim);
+  border-radius: 8px;
+  padding: .35rem .45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  background: rgba(31, 36, 44, .6);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  color: #d5dbe1;
+  background: rgba(45, 57, 69, .7);
+}
+
+.site-menu {
+  position: fixed;
+  top: auto; /* set dynamically */
+  right: auto; /* set dynamically */
+  min-width: 180px;
+  background: linear-gradient(135deg, rgba(34, 39, 47, .78), rgba(18, 21, 25, .78));
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  padding: .35rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity var(--transition-medium), transform var(--transition-medium);
+}
+
+.site-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.site-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-menu__list a {
+  display: block;
+  padding: .6rem .7rem;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  letter-spacing: .08em;
+}
+
+.site-menu__list a:hover,
+.site-menu__list a:focus-visible {
+  background: #2d3945;
+}
+
+/* Back arrow link (content pages) */
+.back-arrow {
+  position: fixed;
+  top: clamp(1rem, 2vh, 1.2rem);
+  left: clamp(1rem, 2.4vw, 1.2rem);
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-dim);
+  background: rgba(31, 36, 44, .6);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.back-arrow:hover,
+.back-arrow:focus-visible {
+  color: #d5dbe1;
+  background: rgba(45, 57, 69, .7);
+}
+
+/* Content card used by standalone pages like Setup/Guestbook */
+.content-card {
+  max-width: 880px;
+  margin: clamp(6rem, 12vh, 8rem) auto 3rem;
+  background: linear-gradient(180deg, rgba(18,20,24,0.6), rgba(12,13,16,0.6));
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 8px 30px -12px rgba(0,0,0,0.8), var(--shadow-sm);
+  backdrop-filter: blur(10px) saturate(140%);
+}
+
+.content-card h2 {
+  margin: 0 0 .6rem 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  letter-spacing: -0.6px;
+}
+
+.content-card p.lead {
+  margin: 0 0 1rem 0;
+  color: var(--color-text-dim);
+  font-size: .95rem;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: .75rem;
+}
+
+.setup-item {
+  background: linear-gradient(180deg, rgba(31,36,44,0.45), rgba(22,24,28,0.45));
+  border: 1px solid rgba(255,255,255,0.02);
+  padding: .85rem;
+  border-radius: 8px;
+}
+
+.setup-item strong { display:block; margin-bottom:.45rem; font-family:var(--font-mono); letter-spacing:.06em; }
+
+@media (max-width:520px) {
+  .content-card { margin: clamp(3rem, 10vh, 4rem) 1rem 2rem; padding: .9rem; }
+}
+
+/* Links used inside the setup grid */
+.setup-link {
+  color: var(--color-text);
+  text-decoration: underline dotted rgba(255,255,255,0.06);
+  text-underline-offset: 3px;
+  padding: 2px 4px;
+  border-radius: 6px;
+  transition: background .12s ease, color .12s ease;
+}
+.setup-link:hover,
+.setup-link:focus {
+  background: rgba(255,255,255,0.02);
+  color: var(--color-text);
+}
+
+.setup-list {
+  list-style: none;
+  margin: .25rem 0 0 0;
+  padding: 0;
+  display: grid;
+  gap: .45rem;
+}
+.setup-list li {
+  background: transparent;
+  border-radius: 8px;
+}
+.setup-list a {
+  display: block;
+  padding: .5rem .65rem;
+  border-radius: 8px;
+  transition: transform .09s ease, background .12s ease;
+}
+.setup-list a:hover,
+.setup-list a:focus {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.03);
+}

@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => queueReserveUpdate(), { passive: true });
   // Position the mobile-only note under the brand hero
   setupMobileNote();
+  initMenu();
 });
 
 let _reserveScheduled = false;
@@ -458,4 +459,42 @@ function initMicroBio() {
       if (textEl) textEl.textContent = line; else el.textContent = `fun fact: ${line}`;
     })
     .catch(() => { });
+}
+
+function initMenu() {
+  const btn = document.getElementById('menuToggle');
+  const menu = document.getElementById('siteMenu');
+  if (!btn || !menu) return;
+  const position = () => {
+    const r = btn.getBoundingClientRect();
+    const top = Math.round(r.bottom + 8);
+    const right = Math.round(Math.max(16, window.innerWidth - r.right));
+    menu.style.top = top + 'px';
+    menu.style.right = right + 'px';
+  };
+  const open = () => {
+    btn.setAttribute('aria-expanded', 'true');
+    position();
+    menu.classList.add('open');
+    menu.removeAttribute('aria-hidden');
+  };
+  const close = () => {
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    menu.setAttribute('aria-hidden', 'true');
+  };
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    expanded ? close() : open();
+  });
+  window.addEventListener('resize', () => { if (menu.classList.contains('open')) position(); }, { passive: true });
+  document.addEventListener('click', (e) => {
+    if (!menu.classList.contains('open')) return;
+    if (e.target === btn || btn.contains(e.target)) return;
+    if (e.target === menu || menu.contains(e.target)) return;
+    close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
 }

@@ -38,6 +38,17 @@
   <h1 class="brand-hero">streetle</h1>
   <div id="mobileNote" class="mobile-note" aria-hidden="true">this looks better on a pc</div>
   <div id="ukTime" class="local-time" aria-live="polite" aria-label="Current UK time">It is currently --:-- for me</div>
+  <button id="menuToggle" class="menu-toggle" aria-label="Open menu" aria-haspopup="true" aria-controls="siteMenu" aria-expanded="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+  </button>
+  <nav id="siteMenu" class="site-menu" aria-hidden="true">
+    <ul class="site-menu__list">
+      <li><a href="setup.html">Setup</a></li>
+      <li><a href="guestbook.html">Guestbook</a></li>
+    </ul>
+  </nav>
   <main id="content" class="site-main" role="main">
     <section class="section-social" aria-label="Social Links">
       <ul class="social-links">
