@@ -134,7 +134,7 @@ main {
   position: fixed;
   left: clamp(1rem, 3vw, 2.2rem);
   bottom: clamp(1rem, 3vh, 2rem);
-  max-width: 300px;
+  max-width: 320px;
   font-family: var(--font-mono);
   font-size: .65rem;
   letter-spacing: .12em;
@@ -143,8 +143,54 @@ main {
   opacity: 0;
   transform: translateY(6px);
   animation: microBioIn .8s var(--ease-spring) .4s forwards;
-  pointer-events: none;
   user-select: none;
+  pointer-events: none;
+}
+
+.micro-bio__inner {
+  position: relative;
+  background: linear-gradient(135deg, rgba(34, 39, 47, .7), rgba(18, 21, 25, .7));
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: .6rem .7rem;
+  box-shadow: var(--shadow-sm), 0 8px 20px -8px rgba(0,0,0,.7);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  pointer-events: none;
+  /* float effect */
+  animation: microFloat 6s ease-in-out 1.2s infinite;
+}
+
+.micro-bio__inner::after {
+  /* soft glow underneath to sell the floating effect */
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: -8px;
+  height: 10px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.6), rgba(0,0,0,0));
+  filter: blur(4px);
+  z-index: -1;
+}
+
+.micro-bio__label {
+  color: #e8eaf0;
+  background: var(--color-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+
+.micro-bio__text {
+  color: var(--color-text-dim);
+  text-transform: none;
+  letter-spacing: .04em;
+  line-height: 1.2;
 }
 
 @keyframes microBioIn {
@@ -164,6 +210,12 @@ main {
     font-size: .6rem;
     left: 1rem;
     bottom: max(1rem, env(safe-area-inset-bottom));
+    max-width: min(85vw, 360px);
+  }
+
+  .micro-bio__inner {
+    padding: .55rem .6rem;
+    gap: .45rem;
   }
 }
 
@@ -173,6 +225,15 @@ main {
     opacity: 1;
     transform: none;
   }
+  .micro-bio__inner {
+    animation: none;
+  }
+}
+
+@keyframes microFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
 }
 
 /* UK time indicator */

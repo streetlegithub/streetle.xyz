@@ -8,7 +8,41 @@ window.addEventListener('DOMContentLoaded', () => {
   initUkTime();
   initCopyDiscord();
   initMicroBio();
+  // Ensure bottom content isn't obscured by fixed widgets
+  updateWidgetReserve();
+  window.addEventListener('resize', () => updateWidgetReserve(), { passive: true });
 });
+
+// Compute how much vertical space bottom fixed widgets occupy and expose as CSS var
+function updateWidgetReserve() {
+  try {
+    const overlays = [];
+    const np = document.getElementById('nowPlaying');
+    const sp = document.getElementById('steamPlaying');
+    const mb = document.querySelector('.micro-bio');
+    if (np && !np.classList.contains('now-playing--hidden')) overlays.push(np);
+    if (sp && !sp.classList.contains('steam-playing--hidden')) overlays.push(sp);
+    if (mb) overlays.push(mb);
+    if (overlays.length === 0) {
+      document.documentElement.style.setProperty('--widget-reserve', '0px');
+      return;
+    }
+    let minTop = Number.POSITIVE_INFINITY;
+    overlays.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width === 0 && rect.height === 0) return;
+      if (rect.top < minTop) minTop = rect.top;
+    });
+    if (!isFinite(minTop)) {
+      document.documentElement.style.setProperty('--widget-reserve', '0px');
+      return;
+    }
+    const reserve = Math.max(0, Math.round(window.innerHeight - minTop + 12));
+    document.documentElement.style.setProperty('--widget-reserve', reserve + 'px');
+  } catch (_) {
+    // noop
+  }
+}
 
 function initNowPlaying() {
   const endpoint = 'https://spotify-worker.streetle.workers.dev/';
@@ -58,12 +92,14 @@ function initNowPlaying() {
     } catch (err) {
       // Hide widget on error silently after first failure
       el.classList.add('now-playing--hidden');
+  updateWidgetReserve();
     }
   };
 
   function updateWidget(data) {
     if (!data || !data.item || data.currently_playing_type !== 'track') {
       el.classList.add('now-playing--hidden');
+  updateWidgetReserve();
       return;
     }
     const track = data.item;
@@ -110,8 +146,12 @@ function initNowPlaying() {
       el.classList.remove('now-playing--hidden');
     } else {
       el.classList.add('now-playing--hidden');
+      updateWidgetReserve();
       return;
     }
+
+    // update reserve when visible
+    updateWidgetReserve();
 
     if (trackId !== lastTrackId) {
       lastTrackId = trackId;
@@ -153,6 +193,12 @@ function initNowPlaying() {
 
   // Initial kick
   poll();
+
+  // Observe size changes to update reserved space
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => updateWidgetReserve());
+    ro.observe(el);
+  }
 }
 
 function initSteamPlaying() {
@@ -194,6 +240,7 @@ function initSteamPlaying() {
     if (!data || !data.game || !data.game.id) {
       el.classList.add('steam-playing--hidden');
       reposition();
+  updateWidgetReserve();
       return;
     }
     const g = data.game;
@@ -215,6 +262,7 @@ function initSteamPlaying() {
       el.classList.remove('sp-bg-ready');
     }
     reposition();
+  updateWidgetReserve();
     if (g.id !== lastGameId) {
       // restart subtle entrance effect for new game (optional: tiny reflow)
       el.style.animation = 'none';
@@ -226,10 +274,10 @@ function initSteamPlaying() {
       // Observe music widget size changes (e.g., album art aspect) to keep spacing
       const music = document.getElementById('nowPlaying');
       if (window.ResizeObserver && music) {
-        const ro = new ResizeObserver(() => reposition());
+        const ro = new ResizeObserver(() => { reposition(); updateWidgetReserve(); });
         ro.observe(music);
       }
-      window.addEventListener('resize', reposition, { passive: true });
+      window.addEventListener('resize', () => { reposition(); updateWidgetReserve(); }, { passive: true });
       observerAttached = true;
     }
   }
@@ -239,6 +287,12 @@ function initSteamPlaying() {
   function schedule() { setTimeout(loop, BASE); }
   async function loop() { await fetchSteam(); schedule(); }
   fetchSteam(); schedule();
+
+  // Observe steam widget sizing too
+  if (window.ResizeObserver) {
+    const ro = new ResizeObserver(() => updateWidgetReserve());
+    ro.observe(el);
+  }
 }
 
 function initCustomCursor() {
@@ -353,12 +407,13 @@ function initUkTime() {
 function initMicroBio() {
   const el = document.getElementById('microBio');
   if (!el) return;
+  const textEl = el.querySelector('.micro-bio__text');
   fetch('quotes.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : [])
     .then(list => {
       if (!Array.isArray(list) || list.length === 0) return;
       const line = list[Math.floor(Math.random() * list.length)];
-      el.textContent = line;
+      if (textEl) textEl.textContent = line; else el.textContent = `fun fact: ${line}`;
     })
     .catch(() => { });
 }
