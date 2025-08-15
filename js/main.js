@@ -11,6 +11,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // Ensure bottom content isn't obscured by fixed widgets
   queueReserveUpdate(true);
   window.addEventListener('resize', () => queueReserveUpdate(), { passive: true });
+  // Position the mobile-only note under the brand hero
+  setupMobileNote();
 });
 
 let _reserveScheduled = false;
@@ -28,6 +30,29 @@ function queueReserveUpdate(delayUntilLoad = false) {
   } else {
     run();
   }
+}
+
+function setupMobileNote() {
+  const note = document.getElementById('mobileNote');
+  const hero = document.querySelector('.brand-hero');
+  if (!note || !hero) return;
+  const apply = () => {
+    // Only show on narrow screens; CSS also hides on larger sizes
+    if (window.matchMedia('(max-width: 520px)').matches) {
+      const r = hero.getBoundingClientRect();
+      // place 10px below hero bottom, align left with small margin
+      const top = Math.max(8, r.bottom + 10);
+      const left = Math.max(8, r.left);
+      note.style.top = `${top}px`;
+      note.style.left = `${left}px`;
+    }
+  };
+  const schedule = () => requestAnimationFrame(apply);
+  schedule();
+  if (document.readyState !== 'complete') {
+    window.addEventListener('load', schedule, { once: true });
+  }
+  window.addEventListener('resize', schedule, { passive: true });
 }
 
 // Compute how much vertical space bottom fixed widgets occupy and expose as CSS var

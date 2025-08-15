@@ -64,3 +64,39 @@
     filter: none;
   }
 }
+
+/* Mobile-only note under hero */
+.mobile-note {
+  position: fixed;
+  left: 1rem;
+  top: calc(1rem + 3.2rem);
+  /* default, will be refined by JS to sit under hero */
+  font-family: var(--font-sans);
+  font-size: .9rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--color-text-dim);
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: mobileNoteIn .8s var(--ease-spring) .35s forwards;
+  display: none;
+  z-index: 5;
+}
+
+@keyframes mobileNoteIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .mobile-note { display: block; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-note { animation: none; opacity: 1; transform: none; }
+}
