@@ -9,9 +9,26 @@ window.addEventListener('DOMContentLoaded', () => {
   initCopyDiscord();
   initMicroBio();
   // Ensure bottom content isn't obscured by fixed widgets
-  updateWidgetReserve();
-  window.addEventListener('resize', () => updateWidgetReserve(), { passive: true });
+  queueReserveUpdate(true);
+  window.addEventListener('resize', () => queueReserveUpdate(), { passive: true });
 });
+
+let _reserveScheduled = false;
+function queueReserveUpdate(delayUntilLoad = false) {
+  const run = () => {
+    if (_reserveScheduled) return;
+    _reserveScheduled = true;
+    requestAnimationFrame(() => {
+      updateWidgetReserve();
+      _reserveScheduled = false;
+    });
+  };
+  if (delayUntilLoad && document.readyState !== 'complete') {
+    window.addEventListener('load', run, { once: true });
+  } else {
+    run();
+  }
+}
 
 // Compute how much vertical space bottom fixed widgets occupy and expose as CSS var
 function updateWidgetReserve() {
@@ -24,7 +41,7 @@ function updateWidgetReserve() {
     if (sp && !sp.classList.contains('steam-playing--hidden')) overlays.push(sp);
     if (mb) overlays.push(mb);
     if (overlays.length === 0) {
-      document.documentElement.style.setProperty('--widget-reserve', '0px');
+  document.documentElement.style.setProperty('--widget-reserve', '0px');
       return;
     }
     let minTop = Number.POSITIVE_INFINITY;
@@ -34,7 +51,7 @@ function updateWidgetReserve() {
       if (rect.top < minTop) minTop = rect.top;
     });
     if (!isFinite(minTop)) {
-      document.documentElement.style.setProperty('--widget-reserve', '0px');
+  document.documentElement.style.setProperty('--widget-reserve', '0px');
       return;
     }
     const reserve = Math.max(0, Math.round(window.innerHeight - minTop + 12));
@@ -92,14 +109,14 @@ function initNowPlaying() {
     } catch (err) {
       // Hide widget on error silently after first failure
       el.classList.add('now-playing--hidden');
-  updateWidgetReserve();
+  queueReserveUpdate();
     }
   };
 
   function updateWidget(data) {
     if (!data || !data.item || data.currently_playing_type !== 'track') {
       el.classList.add('now-playing--hidden');
-  updateWidgetReserve();
+  queueReserveUpdate();
       return;
     }
     const track = data.item;
@@ -146,12 +163,12 @@ function initNowPlaying() {
       el.classList.remove('now-playing--hidden');
     } else {
       el.classList.add('now-playing--hidden');
-      updateWidgetReserve();
+      queueReserveUpdate();
       return;
     }
 
     // update reserve when visible
-    updateWidgetReserve();
+    queueReserveUpdate();
 
     if (trackId !== lastTrackId) {
       lastTrackId = trackId;
@@ -196,7 +213,7 @@ function initNowPlaying() {
 
   // Observe size changes to update reserved space
   if (window.ResizeObserver) {
-    const ro = new ResizeObserver(() => updateWidgetReserve());
+  const ro = new ResizeObserver(() => queueReserveUpdate());
     ro.observe(el);
   }
 }
@@ -240,7 +257,7 @@ function initSteamPlaying() {
     if (!data || !data.game || !data.game.id) {
       el.classList.add('steam-playing--hidden');
       reposition();
-  updateWidgetReserve();
+  queueReserveUpdate();
       return;
     }
     const g = data.game;
@@ -261,8 +278,8 @@ function initSteamPlaying() {
       el.style.setProperty('--sp-bg', 'none');
       el.classList.remove('sp-bg-ready');
     }
-    reposition();
-  updateWidgetReserve();
+  reposition();
+  queueReserveUpdate();
     if (g.id !== lastGameId) {
       // restart subtle entrance effect for new game (optional: tiny reflow)
       el.style.animation = 'none';
@@ -274,10 +291,10 @@ function initSteamPlaying() {
       // Observe music widget size changes (e.g., album art aspect) to keep spacing
       const music = document.getElementById('nowPlaying');
       if (window.ResizeObserver && music) {
-        const ro = new ResizeObserver(() => { reposition(); updateWidgetReserve(); });
+        const ro = new ResizeObserver(() => { reposition(); queueReserveUpdate(); });
         ro.observe(music);
       }
-      window.addEventListener('resize', () => { reposition(); updateWidgetReserve(); }, { passive: true });
+      window.addEventListener('resize', () => { reposition(); queueReserveUpdate(); }, { passive: true });
       observerAttached = true;
     }
   }
@@ -290,7 +307,7 @@ function initSteamPlaying() {
 
   // Observe steam widget sizing too
   if (window.ResizeObserver) {
-    const ro = new ResizeObserver(() => updateWidgetReserve());
+    const ro = new ResizeObserver(() => queueReserveUpdate());
     ro.observe(el);
   }
 }
